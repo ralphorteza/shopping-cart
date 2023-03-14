@@ -1,7 +1,27 @@
 import './App.css';
 import data from "./data.js"
 function App() {
-  console.log(data);
+
+  const items = data.data;
+  // console.log(items[8]);
+
+    const example = items[8];
+    const itemName = example.item.name;
+    const itemCost = example.item.cost;
+    const itemType = example.item.type;
+    const itemImageURL = example.item.images.icon;
+    const itemID = example.itemId;
+
+    const itemObj = {
+      name: itemName,
+      cost: itemCost,
+      type: itemType,
+      imageURL: itemImageURL,
+      id: itemID,
+    };
+
+    console.log(itemObj);
+  
   return (
     <>
     </>
