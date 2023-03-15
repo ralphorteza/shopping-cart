@@ -4,6 +4,126 @@ export default {
     "lanuage": "en",
     "data": [
       {
+        "itemId": "0f59626d-987f-4f76-acde-361bfe4f8cb2",
+        "lastUpdate": 1611160146,
+        "item": {
+          "name": "Yautja Wristblades",
+          "description": "The most honorable way to take down one's prey.",
+          "type": "pickaxe",
+          "rarity": "legendary",
+          "series": null,
+          "cost": 1500,
+          "upcoming": false,
+          "images": {
+            "icon": "https://na-us1-gsmedia.mativecdn.com/items/e21db309-c94a-4bb5-8214-233623938e57",
+            "featured": null,
+            "background": "https://na-us1-gsmedia.mativecdn.com/items/e21db309-c94a-4bb5-8214-233623938e57",
+            "information": "https://na-us1-gsmedia.mativecdn.com/items/e21db309-c94a-4bb5-8214-233623938e57"
+          },
+          "backpack": {},
+          "obtained": "1200",
+          "obtained_type": "vbucks",
+          "ratings": {
+            "avgStars": 3.07,
+            "totalPoints": 113.5,
+            "numberVotes": 37
+          },
+          "costmeticId": "pickaxe_id_540_nightmaremale_7osoh",
+          "obtainedValue": "none",
+          "obtainedFromBattlepass": "none"
+        }
+      },
+      {
+        "itemId": "392751958934687744",
+        "lastUpdate": 1670439364,
+        "item": {
+          "name": "Demolisher",
+          "description": "Use whatever is at hand.",
+          "type": "pickaxe",
+          "rarity": "epic",
+          "series": "marvel",
+          "cost": 500,
+          "upcoming": false,
+          "images": {
+            "icon": "https://na-us1-gsmedia.mativecdn.com/items/bf5044ef-d2de-43c4-9572-6ae6ff81f35c",
+            "featured": "https://na-us1-gsmedia.mativecdn.com/items/f7070793-bedf-49e4-a620-514dc6e3354b",
+            "background": "https://na-us1-gsmedia.mativecdn.com/items/bf5044ef-d2de-43c4-9572-6ae6ff81f35c",
+            "information": "https://na-us1-gsmedia.mativecdn.com/items/bf5044ef-d2de-43c4-9572-6ae6ff81f35c"
+          },
+          "backpack": {},
+          "obtained": "1200",
+          "obtained_type": "vbucks",
+          "ratings": {
+            "avgStars": 3.22,
+            "totalPoints": 502,
+            "numberVotes": 156
+          },
+          "costmeticId": "pickaxe_basil",
+          "obtainedValue": "none",
+          "obtainedFromBattlepass": "none"
+        }
+      },
+      {
+        "itemId": "419285866954100736",
+        "lastUpdate": 1676765541,
+        "item": {
+          "name": "Brite's Shield",
+          "description": "In every shade of bravery.",
+          "type": "pickaxe",
+          "rarity": "epic",
+          "series": "marvel",
+          "cost": 1100,
+          "upcoming": false,
+          "images": {
+            "icon": "https://na-us1-gsmedia.mativecdn.com/items/ff5a5a21-becd-4b51-813d-89c66c8a703d",
+            "featured": null,
+            "background": "https://na-us1-gsmedia.mativecdn.com/items/ff5a5a21-becd-4b51-813d-89c66c8a703d",
+            "information": "https://na-us1-gsmedia.mativecdn.com/items/ff5a5a21-becd-4b51-813d-89c66c8a703d"
+          },
+          "backpack": {},
+          "obtained": "1200",
+          "obtained_type": "vbucks",
+          "ratings": {
+            "avgStars": 3.28,
+            "totalPoints": 59,
+            "numberVotes": 18
+          },
+          "costmeticId": "pickaxe_shinystar",
+          "obtainedValue": "none",
+          "obtainedFromBattlepass": "none"
+        }
+      },
+      {
+        "itemId": "50148355-42a9-463c-955a-c9bc60609fb0",
+        "lastUpdate": 1659020542,
+        "item": {
+          "name": "Muramasa Blade",
+          "description": "A legendary blade forged by a demon swordsmith.",
+          "type": "pickaxe",
+          "rarity": "epic",
+          "series": "marvel",
+          "cost": 400,
+          "upcoming": false,
+          "images": {
+            "icon": "https://na-us1-gsmedia.mativecdn.com/items/b1483de4-32e3-4f07-b141-c13bfc41607d",
+            "featured": null,
+            "background": "https://na-us1-gsmedia.mativecdn.com/items/b1483de4-32e3-4f07-b141-c13bfc41607d",
+            "information": "https://na-us1-gsmedia.mativecdn.com/items/b1483de4-32e3-4f07-b141-c13bfc41607d"
+          },
+          "backpack": {},
+          "obtained": "1200",
+          "obtained_type": "vbucks",
+          "ratings": {
+            "avgStars": 3.28,
+            "totalPoints": 88.5,
+            "numberVotes": 27
+          },
+          "costmeticId": "pickaxe_id_829_desertshadowblademale",
+          "obtainedValue": "none",
+          "obtainedFromBattlepass": "none"
+        }
+      },
+      {
         "itemId": "427026650864291841",
         "lastUpdate": 1678611087,
         "item": {
@@ -12,7 +132,7 @@ export default {
           "type": "outfit",
           "rarity": "legendary",
           "series": null,
-          "cost": 1200,
+          "cost": 1100,
           "upcoming": false,
           "images": {
             "icon": "https://na-us1-gsmedia.mativecdn.com/items/ed384ce3-d65d-403c-b237-59d7a6ad5522",
@@ -34,61 +154,91 @@ export default {
         }
       },
       {
-        "itemId": "427537094756933632",
-        "lastUpdate": 1678732787,
+        "itemId": "419285866945712128",
+        "lastUpdate": 1676765541,
         "item": {
-          "name": "Mizuki (Magmatic)",
-          "description": "The depth of the ocean. The rage of the storm.",
-          "type": "outfit",
-          "rarity": "legendary",
+          "name": "EXO-7 Falcon Wings",
+          "description": "Recreated by the Wakandan Design Group.",
+          "type": "glider",
+          "rarity": "epic",
+          "series": "marvel",
+          "cost": 1200,
+          "upcoming": false,
+          "images": {
+            "icon": "https://na-us1-gsmedia.mativecdn.com/items/6cfc1b9b-455c-4fc9-8003-62124ad88edd",
+            "featured": null,
+            "background": "https://na-us1-gsmedia.mativecdn.com/items/6cfc1b9b-455c-4fc9-8003-62124ad88edd",
+            "information": "https://na-us1-gsmedia.mativecdn.com/items/6cfc1b9b-455c-4fc9-8003-62124ad88edd"
+          },
+          "backpack": {},
+          "obtained": "1200",
+          "obtained_type": "vbucks",
+          "ratings": {
+            "avgStars": 3.4,
+            "totalPoints": 68,
+            "numberVotes": 20
+          },
+          "costmeticId": "glider_elevate",
+          "obtainedValue": "none",
+          "obtainedFromBattlepass": "none"
+        }
+      },
+      {
+        "itemId": "c7c09431-5df9-4806-9ff0-34e9fc4da750",
+        "lastUpdate": 1600271325,
+        "item": {
+          "name": "Epic Swords Of Wonder (Purple)",
+          "description": "Turns out they're real.",
+          "type": "pickaxe",
+          "rarity": "epic",
           "series": null,
           "cost": 1200,
           "upcoming": false,
           "images": {
-            "icon": "https://na-us1-gsmedia.mativecdn.com/items/bdd00eca-1444-4489-b0cc-650bcd2ec6e0",
-            "featured": "https://na-us1-gsmedia.mativecdn.com/items/16eb9e0b-6fc2-415f-bd18-6eab7b4dc502",
-            "background": "https://na-us1-gsmedia.mativecdn.com/items/bdd00eca-1444-4489-b0cc-650bcd2ec6e0",
-            "information": "https://na-us1-gsmedia.mativecdn.com/items/bdd00eca-1444-4489-b0cc-650bcd2ec6e0"
+            "icon": "https://na-us1-gsmedia.mativecdn.com/items/b361d3e5-adfc-459b-9a42-b697ca0d9a6e",
+            "featured": null,
+            "background": "https://na-us1-gsmedia.mativecdn.com/items/b361d3e5-adfc-459b-9a42-b697ca0d9a6e",
+            "information": "https://na-us1-gsmedia.mativecdn.com/items/b361d3e5-adfc-459b-9a42-b697ca0d9a6e"
           },
           "backpack": {},
           "obtained": "1200",
           "obtained_type": "vbucks",
           "ratings": {
             "avgStars": 3.5,
-            "totalPoints": 21,
-            "numberVotes": 6
+            "totalPoints": 10.5,
+            "numberVotes": 3
           },
-          "costmeticId": "427537094756933632",
+          "costmeticId": "192295558474502144",
           "obtainedValue": "none",
           "obtainedFromBattlepass": "none"
         }
       },
       {
-        "itemId": "427536822407925760",
-        "lastUpdate": 1678732722,
+        "itemId": "081d1716-50ba-4fd7-96f6-f737cc604fe2",
+        "lastUpdate": 1600273735,
         "item": {
-          "name": "Mizuki (River Empress)",
-          "description": "The depth of the ocean. The rage of the storm.",
-          "type": "outfit",
-          "rarity": "legendary",
+          "name": "Harmonic Axes (Purple)",
+          "description": "Perfectly tuned duo.",
+          "type": "pickaxe",
+          "rarity": "epic",
           "series": null,
           "cost": 1200,
           "upcoming": false,
           "images": {
-            "icon": "https://na-us1-gsmedia.mativecdn.com/items/7b99e4aa-972a-4062-b272-2478c0ca1156",
-            "featured": "https://na-us1-gsmedia.mativecdn.com/items/3628c955-86ee-4aac-a397-3f399011c253",
-            "background": "https://na-us1-gsmedia.mativecdn.com/items/7b99e4aa-972a-4062-b272-2478c0ca1156",
-            "information": "https://na-us1-gsmedia.mativecdn.com/items/7b99e4aa-972a-4062-b272-2478c0ca1156"
+            "icon": "https://na-us1-gsmedia.mativecdn.com/items/8b8b2915-b3b3-4bff-a8f7-758b9d871743",
+            "featured": null,
+            "background": "https://na-us1-gsmedia.mativecdn.com/items/8b8b2915-b3b3-4bff-a8f7-758b9d871743",
+            "information": "https://na-us1-gsmedia.mativecdn.com/items/8b8b2915-b3b3-4bff-a8f7-758b9d871743"
           },
           "backpack": {},
           "obtained": "1200",
           "obtained_type": "vbucks",
           "ratings": {
-            "avgStars": 3.1,
-            "totalPoints": 15.5,
-            "numberVotes": 5
+            "avgStars": 3.5,
+            "totalPoints": 7,
+            "numberVotes": 2
           },
-          "costmeticId": "427536822407925760",
+          "costmeticId": "192295558436753411",
           "obtainedValue": "none",
           "obtainedFromBattlepass": "none"
         }
@@ -102,7 +252,7 @@ export default {
           "type": "outfit",
           "rarity": "legendary",
           "series": null,
-          "cost": 1200,
+          "cost": 1000,
           "upcoming": false,
           "images": {
             "icon": "https://na-us1-gsmedia.mativecdn.com/items/9b243951-c2b7-4d47-8c43-ee73924372cb",
@@ -124,61 +274,91 @@ export default {
         }
       },
       {
-        "itemId": "427537753057271808",
-        "lastUpdate": 1678732944,
+        "itemId": "62a1ce8e-8299-4efd-af7d-5956262d7af1",
+        "lastUpdate": 1600280347,
         "item": {
-          "name": "Renzo the Destroyer (Magnificent)",
-          "description": "The galaxy's premier doomfluencer.",
-          "type": "outfit",
-          "rarity": "legendary",
+          "name": "Quad Roller (Fire)",
+          "description": "Rink tested and ready to roll.",
+          "type": "backpack",
+          "rarity": "epic",
           "series": null,
           "cost": 1200,
           "upcoming": false,
           "images": {
-            "icon": "https://na-us1-gsmedia.mativecdn.com/items/df5dfc19-5f11-4256-8845-cd500115be7c",
-            "featured": "https://na-us1-gsmedia.mativecdn.com/items/4c370beb-e495-42fc-861f-f7ba1cd8d39b",
-            "background": "https://na-us1-gsmedia.mativecdn.com/items/df5dfc19-5f11-4256-8845-cd500115be7c",
-            "information": "https://na-us1-gsmedia.mativecdn.com/items/df5dfc19-5f11-4256-8845-cd500115be7c"
+            "icon": "https://na-us1-gsmedia.mativecdn.com/items/c2d0b9e6-16fe-4358-88f7-9176caf3b271",
+            "featured": null,
+            "background": "https://na-us1-gsmedia.mativecdn.com/items/c2d0b9e6-16fe-4358-88f7-9176caf3b271",
+            "information": "https://na-us1-gsmedia.mativecdn.com/items/c2d0b9e6-16fe-4358-88f7-9176caf3b271"
           },
           "backpack": {},
           "obtained": "1200",
           "obtained_type": "vbucks",
           "ratings": {
-            "avgStars": 3.5,
-            "totalPoints": 17.5,
-            "numberVotes": 5
+            "avgStars": 0,
+            "totalPoints": 0,
+            "numberVotes": 0
           },
-          "costmeticId": "427537753057271808",
+          "costmeticId": "192295558403198978",
           "obtainedValue": "none",
           "obtainedFromBattlepass": "none"
         }
       },
       {
-        "itemId": "427537496298491904",
-        "lastUpdate": 1678732882,
+        "itemId": "8e977d93-9f23-4278-968f-45484a63ad2c",
+        "lastUpdate": 1600280365,
         "item": {
-          "name": "Renzo the Destroyer (Rococo Cloak)",
-          "description": "The galaxy's premier doomfluencer.",
-          "type": "outfit",
-          "rarity": "legendary",
+          "name": "Quad Roller (Mint)",
+          "description": "Rink tested and ready to roll.",
+          "type": "backpack",
+          "rarity": "epic",
           "series": null,
           "cost": 1200,
           "upcoming": false,
           "images": {
-            "icon": "https://na-us1-gsmedia.mativecdn.com/items/cc3816db-255d-4974-aece-ac71c023400a",
-            "featured": "https://na-us1-gsmedia.mativecdn.com/items/98e1a063-cc44-4ae1-8e89-4c9c7e108a95",
-            "background": "https://na-us1-gsmedia.mativecdn.com/items/cc3816db-255d-4974-aece-ac71c023400a",
-            "information": "https://na-us1-gsmedia.mativecdn.com/items/cc3816db-255d-4974-aece-ac71c023400a"
+            "icon": "https://na-us1-gsmedia.mativecdn.com/items/9c04d2d5-ebcf-4cb3-839d-8c7a6d056d82",
+            "featured": null,
+            "background": "https://na-us1-gsmedia.mativecdn.com/items/9c04d2d5-ebcf-4cb3-839d-8c7a6d056d82",
+            "information": "https://na-us1-gsmedia.mativecdn.com/items/9c04d2d5-ebcf-4cb3-839d-8c7a6d056d82"
+          },
+          "backpack": {},
+          "obtained": "1200",
+          "obtained_type": "vbucks",
+          "ratings": {
+            "avgStars": 0,
+            "totalPoints": 0,
+            "numberVotes": 0
+          },
+          "costmeticId": "192295558403198977",
+          "obtainedValue": "none",
+          "obtainedFromBattlepass": "none"
+        }
+      },
+      {
+        "itemId": "6efc4681-b281-4439-9695-b1b9c8a70278",
+        "lastUpdate": 1600283158,
+        "item": {
+          "name": "Trapper Pack (Night)",
+          "description": "What big teeth it has.",
+          "type": "backpack",
+          "rarity": "epic",
+          "series": null,
+          "cost": 1200,
+          "upcoming": false,
+          "images": {
+            "icon": "https://na-us1-gsmedia.mativecdn.com/items/d7f94b39-5432-4173-9b25-b4bcd4ed305a",
+            "featured": null,
+            "background": "https://na-us1-gsmedia.mativecdn.com/items/d7f94b39-5432-4173-9b25-b4bcd4ed305a",
+            "information": "https://na-us1-gsmedia.mativecdn.com/items/d7f94b39-5432-4173-9b25-b4bcd4ed305a"
           },
           "backpack": {},
           "obtained": "1200",
           "obtained_type": "vbucks",
           "ratings": {
             "avgStars": 3.5,
-            "totalPoints": 10.5,
-            "numberVotes": 3
+            "totalPoints": 3.5,
+            "numberVotes": 1
           },
-          "costmeticId": "427537496298491904",
+          "costmeticId": "192295558340284419",
           "obtainedValue": "none",
           "obtainedFromBattlepass": "none"
         }
@@ -192,7 +372,7 @@ export default {
           "type": "outfit",
           "rarity": "legendary",
           "series": null,
-          "cost": 1200,
+          "cost": 1100,
           "upcoming": false,
           "images": {
             "icon": "https://na-us1-gsmedia.mativecdn.com/items/58a256ca-a862-4f89-be98-5cab3fb6a53e",
@@ -214,36 +394,6 @@ export default {
         }
       },
       {
-        "itemId": "412691569587003392",
-        "lastUpdate": 1675193338,
-        "item": {
-          "name": "Piccolo (Power Awakening)",
-          "description": "A calm, cool, and solitary Namekian fighter.",
-          "type": "outfit",
-          "rarity": "legendary",
-          "series": null,
-          "cost": 1200,
-          "upcoming": false,
-          "images": {
-            "icon": "https://na-us1-gsmedia.mativecdn.com/items/8b8d70b0-e685-48ee-af8a-2bf54b1900af",
-            "featured": "https://na-us1-gsmedia.mativecdn.com/items/1d8ebb7d-7b35-4f0d-8995-bbd6df3d8023",
-            "background": "https://na-us1-gsmedia.mativecdn.com/items/8b8d70b0-e685-48ee-af8a-2bf54b1900af",
-            "information": "https://na-us1-gsmedia.mativecdn.com/items/8b8d70b0-e685-48ee-af8a-2bf54b1900af"
-          },
-          "backpack": {},
-          "obtained": "1200",
-          "obtained_type": "vbucks",
-          "ratings": {
-            "avgStars": 3.33,
-            "totalPoints": 236.5,
-            "numberVotes": 71
-          },
-          "costmeticId": "412691569587003392",
-          "obtainedValue": "none",
-          "obtainedFromBattlepass": "none"
-        }
-      },
-      {
         "itemId": "412676462714425345",
         "lastUpdate": 1675189736,
         "item": {
@@ -252,7 +402,7 @@ export default {
           "type": "outfit",
           "rarity": "legendary",
           "series": null,
-          "cost": 1200,
+          "cost": 1400,
           "upcoming": false,
           "images": {
             "icon": "https://na-us1-gsmedia.mativecdn.com/items/ed6e73a7-01da-49b2-962e-0cafd045b920",
@@ -274,36 +424,6 @@ export default {
         }
       },
       {
-        "itemId": "412691048264245248",
-        "lastUpdate": 1675193213,
-        "item": {
-          "name": "Son Gohan (Super Saiyan)",
-          "description": "Half Saiyan with immense hidden power, trained by Piccolo.",
-          "type": "outfit",
-          "rarity": "legendary",
-          "series": null,
-          "cost": 1200,
-          "upcoming": false,
-          "images": {
-            "icon": "https://na-us1-gsmedia.mativecdn.com/items/8796e5f0-4914-4dff-98df-b798870a2ed9",
-            "featured": "https://na-us1-gsmedia.mativecdn.com/items/f51ef9fc-644a-4bd7-90d0-0a79a461411e",
-            "background": "https://na-us1-gsmedia.mativecdn.com/items/8796e5f0-4914-4dff-98df-b798870a2ed9",
-            "information": "https://na-us1-gsmedia.mativecdn.com/items/8796e5f0-4914-4dff-98df-b798870a2ed9"
-          },
-          "backpack": {},
-          "obtained": "1200",
-          "obtained_type": "vbucks",
-          "ratings": {
-            "avgStars": 3.38,
-            "totalPoints": 270,
-            "numberVotes": 80
-          },
-          "costmeticId": "412691048264245248",
-          "obtainedValue": "none",
-          "obtainedFromBattlepass": "none"
-        }
-      },
-      {
         "itemId": "395873799798788096",
         "lastUpdate": 1671183669,
         "item": {
@@ -312,7 +432,7 @@ export default {
           "type": "outfit",
           "rarity": "legendary",
           "series": null,
-          "cost": 1200,
+          "cost": 1000,
           "upcoming": false,
           "images": {
             "icon": "https://na-us1-gsmedia.mativecdn.com/items/8fe0d3da-14fc-44bf-8871-ed7436f2cbfd",
@@ -334,36 +454,6 @@ export default {
         }
       },
       {
-        "itemId": "396029464171126784",
-        "lastUpdate": 1671220782,
-        "item": {
-          "name": "All Might (Toshinori)",
-          "description": "It's fine now. Why? Because I am here!",
-          "type": "outfit",
-          "rarity": "legendary",
-          "series": null,
-          "cost": 1200,
-          "upcoming": false,
-          "images": {
-            "icon": "https://na-us1-gsmedia.mativecdn.com/items/b50ac9d4-e39a-4f41-942c-1233561fca39",
-            "featured": "https://na-us1-gsmedia.mativecdn.com/items/7be91e62-872a-4442-aea9-23b30e2f365a",
-            "background": "https://na-us1-gsmedia.mativecdn.com/items/b50ac9d4-e39a-4f41-942c-1233561fca39",
-            "information": "https://na-us1-gsmedia.mativecdn.com/items/b50ac9d4-e39a-4f41-942c-1233561fca39"
-          },
-          "backpack": {},
-          "obtained": "1200",
-          "obtained_type": "vbucks",
-          "ratings": {
-            "avgStars": 3.11,
-            "totalPoints": 641,
-            "numberVotes": 206
-          },
-          "costmeticId": "396029464171126784",
-          "obtainedValue": "none",
-          "obtainedFromBattlepass": "none"
-        }
-      },
-      {
         "itemId": "391657393678979072",
         "lastUpdate": 1670178399,
         "item": {
@@ -372,7 +462,7 @@ export default {
           "type": "outfit",
           "rarity": "legendary",
           "series": null,
-          "cost": 1200,
+          "cost": 1100,
           "upcoming": false,
           "images": {
             "icon": "https://na-us1-gsmedia.mativecdn.com/items/1fd1d11b-d812-4b09-a12f-9f4a55d62fc5",
@@ -394,61 +484,31 @@ export default {
         }
       },
       {
-        "itemId": "391788098083758080",
-        "lastUpdate": 1670209562,
+        "itemId": "52141112-0fe9-4d4a-8d6a-19a4f0771b45",
+        "lastUpdate": 1614733486,
         "item": {
-          "name": "Nezumi (Ascension)",
-          "description": "Master your power, before it masters you.",
-          "type": "outfit",
-          "rarity": "legendary",
+          "name": "Hunter's Skyblade (Nebula)",
+          "description": "Chase your prey across land and sea.",
+          "type": "glider",
+          "rarity": "epic",
           "series": null,
           "cost": 1200,
           "upcoming": false,
           "images": {
-            "icon": "https://na-us1-gsmedia.mativecdn.com/items/e0232e0d-1fca-47d7-be69-5ba213a204c1",
-            "featured": "https://na-us1-gsmedia.mativecdn.com/items/a2e65522-6b72-40d9-826d-21a8dbc8d411",
-            "background": "https://na-us1-gsmedia.mativecdn.com/items/e0232e0d-1fca-47d7-be69-5ba213a204c1",
-            "information": "https://na-us1-gsmedia.mativecdn.com/items/e0232e0d-1fca-47d7-be69-5ba213a204c1"
+            "icon": "https://na-us1-gsmedia.mativecdn.com/items/943085d9-e30e-4df3-b6f6-105956d38044",
+            "featured": null,
+            "background": "https://na-us1-gsmedia.mativecdn.com/items/943085d9-e30e-4df3-b6f6-105956d38044",
+            "information": "https://na-us1-gsmedia.mativecdn.com/items/943085d9-e30e-4df3-b6f6-105956d38044"
           },
           "backpack": {},
           "obtained": "1200",
           "obtained_type": "vbucks",
           "ratings": {
-            "avgStars": 3.13,
-            "totalPoints": 269,
-            "numberVotes": 86
+            "avgStars": 3.5,
+            "totalPoints": 3.5,
+            "numberVotes": 1
           },
-          "costmeticId": "391788098083758080",
-          "obtainedValue": "none",
-          "obtainedFromBattlepass": "none"
-        }
-      },
-      {
-        "itemId": "391788288425463808",
-        "lastUpdate": 1670209607,
-        "item": {
-          "name": "Nezumi (Exile)",
-          "description": "Master your power, before it masters you.",
-          "type": "outfit",
-          "rarity": "legendary",
-          "series": null,
-          "cost": 1200,
-          "upcoming": false,
-          "images": {
-            "icon": "https://na-us1-gsmedia.mativecdn.com/items/1fed31c9-97c7-4e30-848a-332202ac0be0",
-            "featured": "https://na-us1-gsmedia.mativecdn.com/items/7356a152-316c-4726-b180-f448f0b8536e",
-            "background": "https://na-us1-gsmedia.mativecdn.com/items/1fed31c9-97c7-4e30-848a-332202ac0be0",
-            "information": "https://na-us1-gsmedia.mativecdn.com/items/1fed31c9-97c7-4e30-848a-332202ac0be0"
-          },
-          "backpack": {},
-          "obtained": "1200",
-          "obtained_type": "vbucks",
-          "ratings": {
-            "avgStars": 3.11,
-            "totalPoints": 208.5,
-            "numberVotes": 67
-          },
-          "costmeticId": "391788288425463808",
+          "costmeticId": "192295557815996416",
           "obtainedValue": "none",
           "obtainedFromBattlepass": "none"
         }
@@ -462,7 +522,7 @@ export default {
           "type": "outfit",
           "rarity": "legendary",
           "series": null,
-          "cost": 1200,
+          "cost": 1100,
           "upcoming": false,
           "images": {
             "icon": "https://na-us1-gsmedia.mativecdn.com/items/e6dc08b4-da69-466d-ae14-1a2b84a50e63",
@@ -484,156 +544,6 @@ export default {
         }
       },
       {
-        "itemId": "394979294125887488",
-        "lastUpdate": 1670970402,
-        "item": {
-          "name": "The Ageless (Aeon)",
-          "description": "The Snapshot left to rule an Empire.",
-          "type": "outfit",
-          "rarity": "legendary",
-          "series": null,
-          "cost": 1200,
-          "upcoming": false,
-          "images": {
-            "icon": "https://na-us1-gsmedia.mativecdn.com/items/d7afe564-6d90-4aba-af81-0687fd56abd5",
-            "featured": "https://na-us1-gsmedia.mativecdn.com/items/cf87291c-c823-45dd-af2c-f188827a6daf",
-            "background": "https://na-us1-gsmedia.mativecdn.com/items/d7afe564-6d90-4aba-af81-0687fd56abd5",
-            "information": "https://na-us1-gsmedia.mativecdn.com/items/d7afe564-6d90-4aba-af81-0687fd56abd5"
-          },
-          "backpack": {},
-          "obtained": "1200",
-          "obtained_type": "vbucks",
-          "ratings": {
-            "avgStars": 3.39,
-            "totalPoints": 183,
-            "numberVotes": 54
-          },
-          "costmeticId": "394979294125887488",
-          "obtainedValue": "none",
-          "obtainedFromBattlepass": "none"
-        }
-      },
-      {
-        "itemId": "401468814929698816",
-        "lastUpdate": 1672517624,
-        "item": {
-          "name": "The Ageless (Armor)",
-          "description": "The Snapshot left to rule an Empire.",
-          "type": "outfit",
-          "rarity": "legendary",
-          "series": null,
-          "cost": 1200,
-          "upcoming": false,
-          "images": {
-            "icon": "https://na-us1-gsmedia.mativecdn.com/items/4f1e95ea-7e1d-4632-86c7-7388722b0082",
-            "featured": "https://na-us1-gsmedia.mativecdn.com/items/40cb0c3a-cdd4-4a50-91ca-e00d58e9ac8d",
-            "background": "https://na-us1-gsmedia.mativecdn.com/items/4f1e95ea-7e1d-4632-86c7-7388722b0082",
-            "information": "https://na-us1-gsmedia.mativecdn.com/items/4f1e95ea-7e1d-4632-86c7-7388722b0082"
-          },
-          "backpack": {},
-          "obtained": "1200",
-          "obtained_type": "vbucks",
-          "ratings": {
-            "avgStars": 3.47,
-            "totalPoints": 204.5,
-            "numberVotes": 59
-          },
-          "costmeticId": "401468814929698816",
-          "obtainedValue": "none",
-          "obtainedFromBattlepass": "none"
-        }
-      },
-      {
-        "itemId": "391787344656732160",
-        "lastUpdate": 1670209382,
-        "item": {
-          "name": "The Ageless (Champion)",
-          "description": "The Snapshot left to rule an Empire.",
-          "type": "outfit",
-          "rarity": "legendary",
-          "series": null,
-          "cost": 1200,
-          "upcoming": false,
-          "images": {
-            "icon": "https://na-us1-gsmedia.mativecdn.com/items/eab59c79-aaa6-4778-8093-837c9d12dbe9",
-            "featured": "https://na-us1-gsmedia.mativecdn.com/items/5823ba49-d063-4320-86fb-d5288f76d76c",
-            "background": "https://na-us1-gsmedia.mativecdn.com/items/eab59c79-aaa6-4778-8093-837c9d12dbe9",
-            "information": "https://na-us1-gsmedia.mativecdn.com/items/eab59c79-aaa6-4778-8093-837c9d12dbe9"
-          },
-          "backpack": {},
-          "obtained": "1200",
-          "obtained_type": "vbucks",
-          "ratings": {
-            "avgStars": 3.41,
-            "totalPoints": 818,
-            "numberVotes": 240
-          },
-          "costmeticId": "391787344656732160",
-          "obtainedValue": "none",
-          "obtainedFromBattlepass": "none"
-        }
-      },
-      {
-        "itemId": "394978896837222400",
-        "lastUpdate": 1670970307,
-        "item": {
-          "name": "The Ageless (Elysian)",
-          "description": "The Snapshot left to rule an Empire.",
-          "type": "outfit",
-          "rarity": "legendary",
-          "series": null,
-          "cost": 1200,
-          "upcoming": false,
-          "images": {
-            "icon": "https://na-us1-gsmedia.mativecdn.com/items/34b712d1-acd7-4aa4-bb0f-4201680402c2",
-            "featured": "https://na-us1-gsmedia.mativecdn.com/items/da7315fa-dc78-4286-b225-31b0b4581d62",
-            "background": "https://na-us1-gsmedia.mativecdn.com/items/34b712d1-acd7-4aa4-bb0f-4201680402c2",
-            "information": "https://na-us1-gsmedia.mativecdn.com/items/34b712d1-acd7-4aa4-bb0f-4201680402c2"
-          },
-          "backpack": {},
-          "obtained": "1200",
-          "obtained_type": "vbucks",
-          "ratings": {
-            "avgStars": 3.5,
-            "totalPoints": 161,
-            "numberVotes": 46
-          },
-          "costmeticId": "394978896837222400",
-          "obtainedValue": "none",
-          "obtainedFromBattlepass": "none"
-        }
-      },
-      {
-        "itemId": "394978697637142528",
-        "lastUpdate": 1670970260,
-        "item": {
-          "name": "The Ageless (Halcyon)",
-          "description": "The Snapshot left to rule an Empire.",
-          "type": "outfit",
-          "rarity": "legendary",
-          "series": null,
-          "cost": 1200,
-          "upcoming": false,
-          "images": {
-            "icon": "https://na-us1-gsmedia.mativecdn.com/items/4142ddc1-6945-4dfd-8c4b-7a2a47a1a552",
-            "featured": "https://na-us1-gsmedia.mativecdn.com/items/2dbad398-d4c4-4dba-bdae-f65743240ecf",
-            "background": "https://na-us1-gsmedia.mativecdn.com/items/4142ddc1-6945-4dfd-8c4b-7a2a47a1a552",
-            "information": "https://na-us1-gsmedia.mativecdn.com/items/4142ddc1-6945-4dfd-8c4b-7a2a47a1a552"
-          },
-          "backpack": {},
-          "obtained": "1200",
-          "obtained_type": "vbucks",
-          "ratings": {
-            "avgStars": 3.39,
-            "totalPoints": 183,
-            "numberVotes": 54
-          },
-          "costmeticId": "394978697637142528",
-          "obtainedValue": "none",
-          "obtainedFromBattlepass": "none"
-        }
-      },
-      {
         "itemId": "ee35a49e-ceb0-4771-a0f0-54a1b73ea550",
         "lastUpdate": 1663493434,
         "item": {
@@ -642,7 +552,7 @@ export default {
           "type": "outfit",
           "rarity": "legendary",
           "series": null,
-          "cost": 1200,
+          "cost": 2000,
           "upcoming": false,
           "images": {
             "icon": "https://na-us1-gsmedia.mativecdn.com/items/b8330a84-39fc-45f5-ba29-2e64f13c0035",
@@ -664,31 +574,31 @@ export default {
         }
       },
       {
-        "itemId": "9448e00a-39cd-410a-a8d5-d0e1ec5b1ecb",
-        "lastUpdate": 1669079142,
+        "itemId": "02b50a86-f65d-41fb-a701-8aac652abfb9",
+        "lastUpdate": 1663496137,
         "item": {
-          "name": "Paradigm (Reality-659) (Aurelian)",
-          "description": "Her duty defies reality. One of The Seven.",
-          "type": "outfit",
-          "rarity": "legendary",
-          "series": null,
+          "name": "Gwen's Spiderchute",
+          "description": "Glide with the guidance of your spider senses.",
+          "type": "glider",
+          "rarity": "epic",
+          "series": "marvel",
           "cost": 1200,
           "upcoming": false,
           "images": {
-            "icon": "https://na-us1-gsmedia.mativecdn.com/items/9a41d5ad-cb34-4a2f-9e2a-a768a2f1063b",
+            "icon": "https://na-us1-gsmedia.mativecdn.com/items/c396979c-c9b6-42f4-8174-d75b15f13703",
             "featured": null,
-            "background": "https://na-us1-gsmedia.mativecdn.com/items/9a41d5ad-cb34-4a2f-9e2a-a768a2f1063b",
-            "information": "https://na-us1-gsmedia.mativecdn.com/items/9a41d5ad-cb34-4a2f-9e2a-a768a2f1063b"
+            "background": "https://na-us1-gsmedia.mativecdn.com/items/c396979c-c9b6-42f4-8174-d75b15f13703",
+            "information": "https://na-us1-gsmedia.mativecdn.com/items/c396979c-c9b6-42f4-8174-d75b15f13703"
           },
           "backpack": {},
           "obtained": "1200",
           "obtained_type": "vbucks",
           "ratings": {
-            "avgStars": 3.12,
-            "totalPoints": 65.5,
-            "numberVotes": 21
+            "avgStars": 3.3,
+            "totalPoints": 33,
+            "numberVotes": 10
           },
-          "costmeticId": "389525963429515264",
+          "costmeticId": "glider_rosedust",
           "obtainedValue": "none",
           "obtainedFromBattlepass": "none"
         }
