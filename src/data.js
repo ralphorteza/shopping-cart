@@ -4,66 +4,6 @@ export default {
     "lanuage": "en",
     "data": [
       {
-        "itemId": "cbe66754-fd92-4d72-82e7-b8f8c47e861c",
-        "lastUpdate": 1638212446,
-        "item": {
-          "name": "No Backbling",
-          "description": "Don't like those backbacks? Select this one :)",
-          "type": "backpack",
-          "rarity": "legendary",
-          "series": "marvel",
-          "cost": 1200,
-          "upcoming": false,
-          "images": {
-            "icon": "https://na-us1-gsmedia.mativecdn.com/items/6c4d3f15-33c6-47b9-b649-5a505d56d60e",
-            "featured": null,
-            "background": "https://na-us1-gsmedia.mativecdn.com/items/6c4d3f15-33c6-47b9-b649-5a505d56d60e",
-            "information": "https://na-us1-gsmedia.mativecdn.com/items/6c4d3f15-33c6-47b9-b649-5a505d56d60e"
-          },
-          "backpack": {},
-          "obtained": "1200",
-          "obtained_type": "vbucks",
-          "ratings": {
-            "avgStars": 3.5,
-            "totalPoints": 14,
-            "numberVotes": 4
-          },
-          "costmeticId": "no_backbling",
-          "obtainedValue": "none",
-          "obtainedFromBattlepass": "none"
-        }
-      },
-      {
-        "itemId": "389522253592793088",
-        "lastUpdate": 1669669342,
-        "item": {
-          "name": "No Wrap",
-          "description": "Don't like those wraps? Select this one :)",
-          "type": "wrap",
-          "rarity": "legendary",
-          "series": "marvel",
-          "cost": 1200,
-          "upcoming": false,
-          "images": {
-            "icon": "https://na-us1-gsmedia.mativecdn.com/items/6c4d3f15-33c6-47b9-b649-5a505d56d60e",
-            "featured": null,
-            "background": "https://na-us1-gsmedia.mativecdn.com/items/6c4d3f15-33c6-47b9-b649-5a505d56d60e",
-            "information": "https://na-us1-gsmedia.mativecdn.com/items/6c4d3f15-33c6-47b9-b649-5a505d56d60e"
-          },
-          "backpack": {},
-          "obtained": "1200",
-          "obtained_type": "vbucks",
-          "ratings": {
-            "avgStars": 2.64,
-            "totalPoints": 18.5,
-            "numberVotes": 7
-          },
-          "costmeticId": "no_wrap",
-          "obtainedValue": "none",
-          "obtainedFromBattlepass": "none"
-        }
-      },
-      {
         "itemId": "427026650864291841",
         "lastUpdate": 1678611087,
         "item": {

@@ -7,12 +7,24 @@ body {
   font-family: 'Poppins', sans-serif;
   padding: 20px;
   display: flex;
-  align-items: flex-start;
-  /* justify-content: center; */
+  /* align-items: flex-start;
+  flex-direction: row; */
+  justify-content: center;
 
 
   width: 100vw;
   height: 100vh;
+  /* border: medium solid red; */
+}
+
+.container--card {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  /* align-content: space-around;   */
+  justify-content: space-around;
+  gap: 10px;
   /* border: medium solid red; */
 }
 

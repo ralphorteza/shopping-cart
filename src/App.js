@@ -4,28 +4,27 @@ import data from "./data.js"
 function App() {
 
   const items = data.data;
-  // console.log(items[8]);
+  const itemsArray = [];
 
-    const example = items[8];
-    // const itemName = example.item.name;
-    // const itemCost = example.item.cost;
-    // const itemType = example.item.type;
-    // const itemImageURL = example.item.images.icon;
-    // const itemID = example.itemId;
+  items.forEach( item => {
+    itemsArray.push(
+      {
+        name: item.item.name,
+        cost: item.item.cost,
+        type: item.item.type,
+        imageUrl: item.item.images.icon,
+        id: item.itemId,
+      }
+    );
+  });
 
-    const itemObj = {
-      name: example.item.name,
-      cost: example.item.cost,
-      type: example.item.type,
-      imageUrl: example.item.images.icon,
-      id: example.itemId,
-    };
-
-    // console.log(itemObj);
+  const cardsArray = itemsArray.map(item => (
+    <Card key={item.id} itemObj={item}/>
+  ));
   
   return (
     <>
-      <Card itemObj={itemObj} />
+      <div className="container--card">{cardsArray}</div>
     </>
   );
 }
