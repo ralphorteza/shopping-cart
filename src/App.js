@@ -7,24 +7,25 @@ function App() {
   // console.log(items[8]);
 
     const example = items[8];
-    const itemName = example.item.name;
-    const itemCost = example.item.cost;
-    const itemType = example.item.type;
-    const itemImageURL = example.item.images.icon;
-    const itemID = example.itemId;
+    // const itemName = example.item.name;
+    // const itemCost = example.item.cost;
+    // const itemType = example.item.type;
+    // const itemImageURL = example.item.images.icon;
+    // const itemID = example.itemId;
 
     const itemObj = {
-      name: itemName,
-      cost: itemCost,
-      type: itemType,
-      imageURL: itemImageURL,
-      id: itemID,
+      name: example.item.name,
+      cost: example.item.cost,
+      type: example.item.type,
+      imageUrl: example.item.images.icon,
+      id: example.itemId,
     };
 
-    console.log(itemObj);
+    // console.log(itemObj);
   
   return (
     <>
+      <Card itemObj={itemObj} />
     </>
   );
 }
