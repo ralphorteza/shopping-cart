@@ -1,36 +1,51 @@
 import './App.css';
-import Card from './components/Card';
-import data from "./data.js"
-
+import banner from "./images/fortnite-banner.jpeg";
 function App() {
 
-  // const items = data.data;
-  // const itemsArray = [];
+  return (
+    <div className="home-page">
+      <h1>HomePage</h1>
 
-  // items.forEach( item => {
-  //   itemsArray.push(
-  //     {
-  //       name: item.item.name,
-  //       cost: item.item.cost,
-  //       type: item.item.type,
-  //       imageUrl: item.item.images.icon,
-  //       id: item.itemId,
-  //       description: item.item.description,
-  //       rating: item.item.ratings,
-  //     }
-  //   );
-  // });
-
-  // const cardsArray = itemsArray.map(item => (
-  //   <Card key={item.id} itemObj={item}/>
-  // ));
-  
-  // return (
-  //   <>
-  //     <div className="container--card">{cardsArray}</div>
-  //   </>
-  // );
+      <section className="splash">
+        <img src={banner} alt="home page splash banner" className="splash--banner"/>
+        <div className="splash--right">
+          <h3>Spend your parents' hard earned cash for some digital tom-foolery!</h3>
+          <div className="shop--button">Shop Here</div>
+        </div>
+      </section>
+    </div>
+  )
 }
+
+// function App() {
+
+//   const items = data.data;
+//   const itemsArray = [];
+
+//   items.forEach( item => {
+//     itemsArray.push(
+//       {
+//         name: item.item.name,
+//         cost: item.item.cost,
+//         type: item.item.type,
+//         imageUrl: item.item.images.icon,
+//         id: item.itemId,
+//         description: item.item.description,
+//         rating: item.item.ratings,
+//       }
+//     );
+//   });
+
+//   const cardsArray = itemsArray.map(item => (
+//     <Card key={item.id} itemObj={item}/>
+//   ));
+  
+//   return (
+//     <>
+//       <div className="container--card">{cardsArray}</div>
+//     </>
+//   );
+// }
 
 
 /* This App component is meant for testing purposes. Comment out the function
