@@ -2,7 +2,6 @@ import React from "react";
 import Star from "../images/star.svg";
 
 export default function Card({ itemObj }) {
-  console.log(itemObj)
   return (
     <div className="card">
       <img
