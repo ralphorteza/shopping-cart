@@ -10,7 +10,8 @@ function HomePage() {
         <img src={banner} alt="home page splash banner" className="splash--banner"/>
         <div className="splash--right">
           <h3>Spend your parents' hard earned cash for some digital tom-foolery!</h3>
-          <div className="shop--button">Shop Here</div>
+          {/* <div className="shop--button">Shop Here</div> */}
+          <button className="button">shop here</button>
         </div>
       </section>
     </div>

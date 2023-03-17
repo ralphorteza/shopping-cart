@@ -5,9 +5,104 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+
+  display: flex;
+
+  justify-content: center;
+
+  width: 100vw;
+  height: 100vh;
+  border: medium solid red;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+/* variables */
+:root{
+  --primary: #EA580C;
+  --secondary: white;
+}
+
+/* reset */
+body,p,a,ul,li{
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+li{
+  list-style-type: none;
+}
+
+/* base styles */
+body{
+  background: var(--secondary);
+  overflow-x: hidden;
+}
+.button {
+  background: none;
+  border: 2px solid var(--primary);
+  color: var(--primary);
+  padding: 6px 12px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  /* box-shadow: 1px 2px 3px rgba(0,0,0,0.6); */
+  display: inline-block;
+}
+
+.button:hover{
+  color: var(--secondary);
+  background: var(--primary);
+}
+
+input,textarea{
+  background: rgba(255,255,255,0.05);
+  padding: 10px 16px;
+  border-radius: 20px;
+  border: 2px solid black;
+  color: #f2f2f2;
+}
+
+/* fonts */
+h1,h2,h3,h4{
+  color: black;
+  font-weight: normal;
+  line-height: 1.4em;
+}
+p,a,li{
+  color: black;
+  line-height: 1.4em;
+  font-size: 1em;
+}
+h1, h3{
+  font-size: 1.2em;
+}
+h2{
+  font-size: 1.6em;
+}
+h4{
+  font-size: 1.1em;
+}
+.leading{
+  font-size: 1.1em;
+}
+
+/* mobile styles */
+
+/* small tablet styles */
+@media screen and (min-width: 620px){
+  
+}
+
+/* large tablet & laptop styles */
+@media screen and (min-width: 960px){
+
+}
+
+/* desktop styles */
+@media screen and (min-width: 1200px){
+
 }

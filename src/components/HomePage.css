@@ -1,27 +1,9 @@
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  font-family: 'poppins', sans-serif;
-  /* padding: 20px; */
-  display: flex;
-
-  justify-content: center;
-
-  width: 100vw;
-  height: 100vh;
-  border: medium solid red;
-}
-
-/* ====================== homepage ====================== */
 .home-page{
   display: flex;
   flex-direction: column;
 
   /* position: relative; */
-  border: medium solid red;
+  /* border: medium solid red; */
 }
 
 .splash {
@@ -47,24 +29,6 @@ body {
   flex-direction: column;
   align-content: center;
 }
-/* 
-.splash--right > h3 {
-  margin-bottom: auto;
-} */
 
-.shop--button {
-
-  height: 60px;
-  padding: 8px;
-  text-align: center;
-  color: antiquewhite;
-  font-weight: 900;
-  border-radius: 9px;
-  background-color: #EA580C;
-  cursor: pointer;
-}
-
-
-/* =================== Card Elements =================== */
 
 

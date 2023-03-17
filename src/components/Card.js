@@ -26,7 +26,8 @@ export default function Card({ itemObj }) {
         <p className="card--description">{itemObj.description}</p>
       </div>
       <p className="card--cost">₴{itemObj.cost}</p>
-      <div className="card--add">add</div>
+      {/* <div className="card--add">add</div> */}
+      <button className="button">add</button>
     </div>
   );
 };

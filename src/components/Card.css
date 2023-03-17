@@ -62,16 +62,3 @@
   padding-left: 20px;
   margin-bottom: 5px;
 }
-
-.card--add{
-  padding: 8px;
-  margin: 5px 20px;
-  text-align: center;
-  color: antiquewhite;
-  font-weight: 900;
-  border-radius: 9px;
-  background-color: #EA580C;
-  cursor: pointer;
-  
-  /* border: 1px solid black; */
-}
