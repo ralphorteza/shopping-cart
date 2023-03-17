@@ -1,4 +1,5 @@
 import React from "react";
+import "./Shop.css"
 import Card from "./Card";
 import data from "../data";
 

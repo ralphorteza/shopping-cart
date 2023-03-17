@@ -1,6 +1,6 @@
-import './App.css';
-import banner from "./images/fortnite-banner.jpeg";
-function App() {
+import './HomePage.css';
+import banner from "../images/fortnite-banner.jpeg";
+function HomePage() {
 
   return (
     <div className="home-page">
@@ -78,4 +78,4 @@ function App() {
 //   );
 // }
 
-export default App;
+export default HomePage;

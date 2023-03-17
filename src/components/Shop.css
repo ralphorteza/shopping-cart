@@ -1,0 +1,10 @@
+.container--card {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  justify-content: space-around;
+  gap: 10px;
+  padding: 10px 40px;
+  /* border: medium solid red; */
+}
