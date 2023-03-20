@@ -2,7 +2,7 @@ import React from "react";
 import './Card.css'
 import Star from "../images/star.svg";
 
-export default function Card({ itemObj }) {
+export default function Card({ itemObj, handleCart }) {
   return (
     <div className="card">
       <img
@@ -27,7 +27,7 @@ export default function Card({ itemObj }) {
       </div>
       <p className="card--cost">₴{itemObj.cost}</p>
       {/* <div className="card--add">add</div> */}
-      <button className="button">add</button>
+      <button className="button" onClick={(e) => handleCart(e, itemObj.id)}>add</button>
     </div>
   );
 };

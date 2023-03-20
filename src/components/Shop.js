@@ -1,10 +1,9 @@
 import React from "react";
 import "./Shop.css"
 import Card from "./Card";
-import data from "../data";
+// import data from "../data";
 
-export default function Shop() {
-  const items = data.data;
+export default function Shop({items, handleCart}) {
   const itemsArray = [];
 
   items.forEach( item => {
@@ -22,7 +21,11 @@ export default function Shop() {
   });
 
   const cardsArray = itemsArray.map(item => (
-    <Card key={item.id} itemObj={item}/>
+    <Card 
+      key={item.id}
+      itemObj={item}
+      handleCart={handleCart}
+    />
   ));
   
   return (

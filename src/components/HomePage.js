@@ -11,7 +11,7 @@ function HomePage() {
         <div className="splash--right">
           <h3>Spend your parents' hard earned cash for some digital tom-foolery!</h3>
           {/* <div className="shop--button">Shop Here</div> */}
-          <button className="button">shop here</button>
+          <button className="button"><a href="/shop">shop here</a></button>
         </div>
       </section>
     </div>
