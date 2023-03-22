@@ -10,5 +10,5 @@ export default function Nav() {
         <li><a href="/checkout">checkout</a></li>
       </ul>
     </nav>
-  )
+  );
 }

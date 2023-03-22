@@ -20,5 +20,5 @@ export default function CheckoutCard({
       <button onClick={() => subQuantity(item.id)}>-</button>
       <button onClick={(e) => removeItemFromCart(e, item.id)}>remove item</button>
     </div>
-  )
+  );
 }

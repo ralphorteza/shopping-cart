@@ -81,13 +81,13 @@ export default function RouteSwitch() {
         <Route
           path="/checkout"
           element={
-          <Checkout
-            cart={cart}
-            handleCart={handleCart}
-            subQuantity={subQuantity}
-            addQuantity={addQuantity}
-            removeItemFromCart={removeItemFromCart}
-          />}
+            <Checkout
+              cart={cart}
+              handleCart={handleCart}
+              subQuantity={subQuantity}
+              addQuantity={addQuantity}
+              removeItemFromCart={removeItemFromCart}
+            />}
         />
       </Routes>
       <Footer />

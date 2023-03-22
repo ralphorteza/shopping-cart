@@ -20,13 +20,11 @@ export default function Card({ itemObj, handleCart }) {
           />
           <span>{itemObj.rating.avgStars}</span>
           <span style={{color: "gray"}}>({itemObj.rating.numberVotes})</span>
-          {/* <span className="card--type">{itemObj.type}</span> */}
         </div>
         <p className="card--type">{itemObj.type} <span></span></p>
         <p className="card--description">{itemObj.description}</p>
       </div>
       <p className="card--cost">₴{itemObj.cost}</p>
-      {/* <div className="card--add">add</div> */}
       <button className="button" onClick={(e) => handleCart(e, itemObj.id)}>add</button>
     </div>
   );

@@ -10,5 +10,5 @@ export default function Footer() {
       <p>Epic Games, please don't sue me</p>
     </div>
   </footer>
-  )
+  );
 }

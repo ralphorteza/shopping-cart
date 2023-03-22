@@ -1,10 +1,8 @@
 import React from "react";
 import "./Shop.css"
 import Card from "./Card";
-// import data from "../data";
 
-export default function Shop({items, handleCart}) {
-  // console.log(items);
+export default function Shop({ items, handleCart }) {
   const itemsArray = [];
 
   items.forEach( item => {
