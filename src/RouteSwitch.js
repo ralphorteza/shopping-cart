@@ -10,7 +10,15 @@ import Shop from "./components/Shop"
 export default function RouteSwitch() {
   
   const items = data.data;
-  const [cart, setCart] = React.useState([]);
+  const [cart, setCart] = React.useState(
+    () => JSON.parse(localStorage.getItem("cart")) || []
+  );
+
+  React.useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(cart));
+  }, [cart]);
+
+
 
   function addItemToCart(id) {
     const matchedItem = items.find(item => item.itemId === id);
@@ -24,6 +32,11 @@ export default function RouteSwitch() {
     }
 
     setCart(prevState => [...prevState, newItem]);
+  }
+
+  function removeItemFromCart(e, id) {
+    e.stopPropagation();
+    setCart(prevState => prevState.filter(item => item.id !== id));
   }
 
   // function editCart(id) {
@@ -61,6 +74,7 @@ export default function RouteSwitch() {
           <Checkout
             cart={cart}
             handleCart={handleCart}
+            removeItemFromCart={removeItemFromCart}
           />}
         />
       </Routes>

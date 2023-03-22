@@ -1,7 +1,7 @@
 import React from "react";
 import "./CheckoutCard.css"
 
-export default function CheckoutCard({item, handleCart}) {
+export default function CheckoutCard({item, handleCart, removeItemFromCart}) {
   // const [amount, setAmount] = React.useState(0);
 
   // function addAmount() {
@@ -33,7 +33,7 @@ export default function CheckoutCard({item, handleCart}) {
         src={item.imageUrl} 
       />
       <p className="checkout-card--name">{item.name}</p>
-      <button>remove item</button>
+      <button onClick={(e) => removeItemFromCart(e, item.id)}>remove item</button>
     </div>
   )
 }
