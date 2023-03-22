@@ -16,20 +16,17 @@ export default function RouteSwitch() {
 
   React.useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cart));
+
   }, [cart]);
-
-
 
   function addItemToCart(id) {
     const matchedItem = items.find(item => item.itemId === id);
-    // console.log(matchedItem); 
-
     let newItem = {
       amount: 1,
       id: matchedItem.itemId,
       imageUrl: matchedItem.item.images.icon,
       name: matchedItem.item.name,
-    }
+    };
 
     setCart(prevState => [...prevState, newItem]);
   }
@@ -39,21 +36,34 @@ export default function RouteSwitch() {
     setCart(prevState => prevState.filter(item => item.id !== id));
   }
 
-  // function editCart(id) {
-  //   setCart(prevCart => {
-  //     return prevCart.map( item => {
-  //       if (item.id !== id) return item;
-  //       return {...item, [amount]: }
-  //     })
-  //   })
-  // }
-
   function handleCart(e, id) {
     if (cart.some(item => item.id === id) === true) {
-      console.log("Item is already inside the cart!");
+      addQuantity(id);
     } else {
       addItemToCart(id);
     }
+  }
+
+  function addQuantity(id) {
+    const editItem = cart.find(item => item.id === id);
+
+    setCart(prevCart => {
+      return prevCart.map( item => {
+        if (item.id !== id) return item;
+        return {...item, amount: editItem.amount + 1}
+      });
+    });
+  }
+
+  function subQuantity(id) {
+    const editItem = cart.find(item => item.id === id);
+    
+    setCart(prevCart => {
+      return prevCart.map( item => {
+        if (item.id !== id) return item;
+        return {...item, amount: editItem.amount - 1}
+      });
+    });
   }
 
   return (
@@ -74,6 +84,8 @@ export default function RouteSwitch() {
           <Checkout
             cart={cart}
             handleCart={handleCart}
+            subQuantity={subQuantity}
+            addQuantity={addQuantity}
             removeItemFromCart={removeItemFromCart}
           />}
         />
