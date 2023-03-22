@@ -26,7 +26,15 @@ export default function RouteSwitch() {
           items={items}
           /> }
         />
-        <Route path="/checkout" element={<Checkout />} />
+        <Route
+          path="/checkout"
+          element={
+          <Checkout
+            items={items}
+            handleCart={handleCart}
+          />
+        }
+        />
       </Routes>
       <Footer />
     </BrowserRouter>

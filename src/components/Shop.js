@@ -4,6 +4,7 @@ import Card from "./Card";
 // import data from "../data";
 
 export default function Shop({items, handleCart}) {
+  // console.log(items);
   const itemsArray = [];
 
   items.forEach( item => {
