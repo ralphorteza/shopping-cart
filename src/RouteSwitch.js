@@ -12,8 +12,35 @@ export default function RouteSwitch() {
   const items = data.data;
   const [cart, setCart] = React.useState([]);
 
+  function addItemToCart(id) {
+    const matchedItem = items.find(item => item.itemId === id);
+    // console.log(matchedItem); 
+
+    let newItem = {
+      amount: 1,
+      id: matchedItem.itemId,
+      imageUrl: matchedItem.item.images.icon,
+      name: matchedItem.item.name,
+    }
+
+    setCart(prevState => [...prevState, newItem]);
+  }
+
+  // function editCart(id) {
+  //   setCart(prevCart => {
+  //     return prevCart.map( item => {
+  //       if (item.id !== id) return item;
+  //       return {...item, [amount]: }
+  //     })
+  //   })
+  // }
+
   function handleCart(e, id) {
-    console.log(id);
+    if (cart.some(item => item.id === id) === true) {
+      console.log("Item is already inside the cart!");
+    } else {
+      addItemToCart(id);
+    }
   }
 
   return (
@@ -21,19 +48,20 @@ export default function RouteSwitch() {
       <Nav />
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/shop" element={<Shop
-          handleCart={handleCart}
-          items={items}
-          /> }
+        <Route path="/shop"
+          element={
+          <Shop
+            handleCart={handleCart}
+            items={items}
+          />}
         />
         <Route
           path="/checkout"
           element={
           <Checkout
-            items={items}
+            cart={cart}
             handleCart={handleCart}
-          />
-        }
+          />}
         />
       </Routes>
       <Footer />

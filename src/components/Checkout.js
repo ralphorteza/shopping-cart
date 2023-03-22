@@ -1,7 +1,7 @@
 import React from "react";
 import CheckoutCard from "./CheckoutCard";
 
-export default function Checkout({items, handleCart}) {
+export default function Checkout({cart, handleCart}) {
   // const itemsArray = [];
 
   // items.forEach( item => {
@@ -26,25 +26,45 @@ export default function Checkout({items, handleCart}) {
   //   />
   // ));
 
-  const itemsArray = [];
-  const exampleCheckoutCard = {
-        name: items[4].item.name,
-        cost: items[4].item.cost,
-        type: items[4].item.type,
-        imageUrl: items[4].item.images.icon,
-        id: items[4].itemId,
-        description: items[4].item.description,
-        rating: items[4].item.ratings,
-  }
-  itemsArray.push(exampleCheckoutCard)
+//   const exampleCheckoutCard = {
+//         name: items[4].item.name,
+//         cost: items[4].item.cost,
+//         type: items[4].item.type,
+//         imageUrl: items[4].item.images.icon,
+//         id: items[4].itemId,
+//         description: items[4].item.description,
+//         rating: items[4].item.ratings,
+//   }
+
+//   const exampleCheckoutCard2 = {
+//     name: items[3].item.name,
+//     cost: items[3].item.cost,
+//     type: items[3].item.type,
+//     imageUrl: items[3].item.images.icon,
+//     id: items[3].itemId,
+//     description: items[3].item.description,
+//     rating: items[3].item.ratings,
+// }
+//   itemsArray.push(exampleCheckoutCard)
+//   itemsArray.push(exampleCheckoutCard2)
   
-  const checkoutCardsArray = itemsArray.map(item => (
+  // const checkoutCardsArray = itemsArray.map(item => (
+  //   <CheckoutCard
+  //     key={item.id}
+  //     item={item}
+  //     handleCart={handleCart}
+  //   />
+  // ))
+
+  const checkoutCardsArray = cart.map(item => (
     <CheckoutCard
       key={item.id}
       item={item}
       handleCart={handleCart}
     />
-  ))
+  ));
+
+  console.log(checkoutCardsArray);
 
   return (
     <>
