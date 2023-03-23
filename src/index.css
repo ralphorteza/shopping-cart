@@ -1,19 +1,24 @@
 body {
-  margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-
-  display: flex;
+  /* display: flex;
 
   justify-content: center;
 
   width: 100vw;
   height: 100vh;
-  border: medium solid red;
+  border: medium solid red; */
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+
+  min-height: 100vh;
 }
 
 code {
@@ -22,26 +27,27 @@ code {
 }
 
 /* variables */
-:root{
+:root {
   --primary: #EA580C;
   --secondary: white;
 }
 
 /* reset */
-body,p,a,ul,li{
+body,p,a,ul,li {
   margin: 0;
   padding: 0;
   text-decoration: none;
 }
-li{
+li {
   list-style-type: none;
 }
 
 /* base styles */
-body{
+body {
   background: var(--secondary);
   overflow-x: hidden;
 }
+
 .button {
   background: none;
   border: 2px solid var(--primary);
@@ -53,12 +59,12 @@ body{
   display: inline-block;
 }
 
-.button:hover{
+.button:hover {
   color: var(--secondary);
   background: var(--primary);
 }
 
-input,textarea{
+input, textarea {
   background: rgba(255,255,255,0.05);
   padding: 10px 16px;
   border-radius: 20px;
@@ -67,42 +73,53 @@ input,textarea{
 }
 
 /* fonts */
-h1,h2,h3,h4{
+h1, h2, h3, h4 {
   color: black;
   font-weight: normal;
   line-height: 1.4em;
 }
-p,a,li{
+
+p, a, li {
   color: black;
   line-height: 1.4em;
   font-size: 1em;
 }
+
 h1, h3{
   font-size: 1.2em;
 }
-h2{
+
+h2 {
   font-size: 1.6em;
 }
-h4{
+
+h4 {
   font-size: 1.1em;
 }
-.leading{
+
+.leading {
   font-size: 1.1em;
 }
 
 /* mobile styles */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+}
 
 /* small tablet styles */
-@media screen and (min-width: 620px){
+@media screen and (min-width: 620px) {
   
 }
 
 /* large tablet & laptop styles */
-@media screen and (min-width: 960px){
-
+@media screen and (min-width: 960px) {
+  body{font-size: 18px;}
 }
 
 /* desktop styles */
-@media screen and (min-width: 1200px){
-
+@media screen and (min-width: 1200px) {
+  body {
+    font-size: 20px;
+  }
 }

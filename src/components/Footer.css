@@ -1,0 +1,14 @@
+footer {
+  margin-top: auto;
+}
+
+.footer p{
+  font-size: 0.6rem;
+  grid-column: 1 / 9;
+  text-align: center;
+  color: gray;
+}
+
+.footer .copyright {
+  font-size: 0.7rem;
+}

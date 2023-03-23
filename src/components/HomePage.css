@@ -1,34 +1,57 @@
-.home-page{
-  display: flex;
-  flex-direction: column;
-
-  /* position: relative; */
-  /* border: medium solid red; */
+.home-page {
+  margin-bottom: auto;
+}
+.home-page img{
+  grid-column: 1 / 9;
+  max-width: 100%;
 }
 
-.splash {
-  display: flex;
-  padding: 20px;
+.home-page p {
+  grid-column: 1 / 5;
+  grid-row: 2;
 
-  border: 1px solid red;
+  padding-left: 10px;
+  padding-top: 20px;
 }
-.splash--banner {
-  width: 100%;
-  box-shadow: 5px 5px 10px 2px rgba(0,0,0,.2);
+
+.home-page .link--shop {
+  grid-column: 5 / 9;
+  grid-row: 2;
+
+  margin: 50px 30px;
+  padding: 5px;
+
+  background: none;
+  border: 2px solid var(--primary);
+  color: var(--primary);
+  padding: 6px 12px;
   border-radius: 20px;
-  flex-grow: 2;
+  text-align: center;
+  display: inline-block;
 }
 
-.splash--right {
-  width: 400px;
-  padding: 20px;
-  margin-left: 30px;
-  border: 1px solid red;
-
-  display: flex;
-  flex-direction: column;
-  align-content: center;
+.link--shop > button {
+  display: inline-block;
+  background: none;
+  border: none;
+}
+.link--shop:hover {
+  color: var(--secondary);
+  background: var(--primary);
 }
 
 
+/* small tablet styles */
+@media screen and (min-width: 620px) {
+  
+}
 
+/* large tablet & laptop styles */
+@media screen and (min-width: 960px) {
+
+}
+
+/* desktop styles */
+@media screen and (min-width: 1200px) {
+
+}

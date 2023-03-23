@@ -1,10 +1,11 @@
 import React from "react";
+import "./Nav.css"
 import { Link } from "react-router-dom";
 
 export default function Nav() {
   return (
-    <nav className="site-nav grid">
-      <h1>Logo Here</h1>
+    <nav className="navbar grid">
+      <h1>FortBuy</h1>
       <ul>
         {/* <li><a href="/">home</a></li> */}
         <li><Link to="/">Home</Link></li>
