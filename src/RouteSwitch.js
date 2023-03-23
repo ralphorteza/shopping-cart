@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate} from "react-router-dom";
 import data from "./data";
 import Checkout from "./components/Checkout";
 import Footer from "./components/Footer";
@@ -70,6 +70,7 @@ export default function RouteSwitch() {
     <BrowserRouter>
       <Nav />
       <Routes>
+        <Route path="/shopping-cart" element={<Navigate to="/" />} />
         <Route path="/" element={<HomePage />} />
         <Route path="/shop"
           element={
