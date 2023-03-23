@@ -7,10 +7,8 @@ export default function HomePage() {
     <div className="home-page grid">
       <img src={banner} alt="home page splash banner" className="splash--banner"/>
       <p className="leading">Spend your parents' hard earned cash for some digital tom-foolery!</p>
-      {/* <button className="button"><Link to="/shop">Shop</Link></button> */}
       <Link className="link--shop" to="/shop">
         shop
-        <button type="button"></button>
       </Link>
     </div>
   );

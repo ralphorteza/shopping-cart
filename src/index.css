@@ -14,9 +14,14 @@ body {
   border: medium solid red; */
 }
 
+html {
+  min-width: 320px;
+}
+
 #root {
   display: flex;
   flex-direction: column;
+  justify-content: center;
 
   min-height: 100vh;
 }
@@ -101,7 +106,7 @@ h4 {
   font-size: 1.1em;
 }
 
-/* mobile styles */
+/* mobile styles  360px*/
 .grid {
   display: grid;
   grid-template-columns: repeat(8, 1fr);
@@ -109,7 +114,6 @@ h4 {
 
 /* small tablet styles */
 @media screen and (min-width: 620px) {
-  
 }
 
 /* large tablet & laptop styles */

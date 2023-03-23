@@ -1,17 +1,24 @@
 import React from "react";
 import "./Nav.css"
+import Cart from "../images/shopping-cart.svg";
 import { Link } from "react-router-dom";
 
 export default function Nav() {
   return (
     <nav className="navbar grid">
-      <h1>FortBuy</h1>
+      <Link className="logo" to="/">
+        <h1>FortBuy</h1>
+      </Link>
       <ul>
         {/* <li><a href="/">home</a></li> */}
         <li><Link to="/">Home</Link></li>
         <li><Link to="/shop">Shop</Link></li>
         <li><Link to="/checkout">Checkout</Link></li>
       </ul>
+      <Link className="cart--link" to="/checkout">
+        <img className="cart" src={Cart} alt="checkout cart"></img>
+      </Link>
+      
     </nav>
   );
 }
