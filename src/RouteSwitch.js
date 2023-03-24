@@ -26,6 +26,7 @@ export default function RouteSwitch() {
       id: matchedItem.itemId,
       imageUrl: matchedItem.item.images.icon,
       name: matchedItem.item.name,
+      cost: matchedItem.item.cost,
     };
 
     setCart(prevState => [...prevState, newItem]);

@@ -1,0 +1,33 @@
+.checkout--info {
+  margin-bottom: 10px;
+  padding-bottom: 5px;
+}
+.checkout--subtotal {
+  grid-column: 1 / 9;
+  text-align: center;
+}
+
+.checkout--cards {
+  row-gap: 10px;
+  margin-bottom: 10px;
+}
+
+.button {
+  grid-column: 2 / 8;
+}
+
+
+/* small tablet styles */
+@media screen and (min-width: 620px) {
+
+}
+
+/* large tablet & laptop styles */
+@media screen and (min-width: 960px) {
+
+}
+
+/* desktop styles */
+@media screen and (min-width: 1200px) {
+
+}

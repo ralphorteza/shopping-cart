@@ -8,17 +8,22 @@ export default function CheckoutCard({
   addQuantity
 }) {
   return (
-    <div className="checkout-card" >
+    <div className="checkout-card grid">
       <img
         className="checkout-card--image"
         alt="item to sell"
         src={item.imageUrl} 
       />
-      <p className="checkout-card--name">{item.name}</p>
-      <button onClick={() => addQuantity(item.id)}>+</button>
-      <h3>{item.amount}</h3>
-      <button onClick={() => subQuantity(item.id)}>-</button>
-      <button onClick={(e) => removeItemFromCart(e, item.id)}>remove item</button>
+      <div className="checkout-card--quantity">
+        <button onClick={() => subQuantity(item.id)}>-</button>
+        <h3>{item.amount}</h3>
+        <button onClick={() => addQuantity(item.id)}>+</button>
+      </div>
+      <div className="checkout-card--content">
+        <p className="checkout-card--name">{item.name}</p>
+        <p>₴{item.cost}</p>
+      </div>
+      <button className="checkout-card--delete" onClick={(e) => removeItemFromCart(e, item.id)}>remove item</button>
     </div>
   );
 }

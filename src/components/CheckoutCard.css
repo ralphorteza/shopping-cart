@@ -1,20 +1,65 @@
 .checkout-card {
-  width: 320px;
-  font-size: 0.8rem;
+  grid-column: 1 / 9;
+  margin: 0 5px;
+  padding: 3px 5px 3px 5px;
+
   border-radius: 9px;
-  padding-bottom: 10px;
-
-  display: flex;
-  flex: 0 0 auto;
-  flex-direction: column;
-  align-content: flex-start;
-  position: relative;
-
   box-shadow: 5px 5px 10px 2px rgba(0,0,0,.2);
-  /* border: 1px solid black; */
+
+  height: clamp(150px, 175px, 200px);
+  grid-template-rows: repeat(5, 20%);
+}
+
+.checkout-card button {
+  border-radius: 5px;
 }
 
 .checkout-card--image {
+  grid-row: 1 / 5;
+  grid-column:  1 / 4;
+
+  place-self: center;
   width: 100%;
-  margin-bottom: 5px;
+  max-width: 144px;
 }
+
+.checkout-card--quantity {
+  display: flex;
+  align-items: center;
+
+  grid-row: 5 / 6;
+  grid-column: 1 / 4;
+  place-self: center center;
+}
+
+.checkout-card--quantity > h3 {
+  margin: 0 10px;
+  margin-left: 10px;
+}
+
+.checkout-card--content {
+  grid-row: 1 / 5;
+  grid-column: 4 / 9;
+  margin-top: 10px;
+}
+
+.checkout-card--name {
+  font-weight: bold;
+}
+
+.checkout-card--content > * {
+  margin-left: 10px;
+  padding-top: 10px;
+}
+
+.checkout-card--delete {
+  grid-row: 5 / 6;
+  grid-column: 4 / 9;
+  place-self: center start;
+  
+  margin-left: 10px;
+  padding: 3px 8px;
+}
+
+
+

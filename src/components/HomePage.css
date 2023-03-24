@@ -19,8 +19,8 @@
   align-self: center;
   justify-self: center;
   padding: 0 0 0 10px;
-  /* padding-left: 10px;
-  padding-top: 20px; */
+
+  font-size: 0.9em;
 }
 
 .home-page .link--shop {
@@ -36,14 +36,11 @@
   padding: 6px 12px;
   border-radius: 20px;
   text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
   display: inline-block;
 }
 
-.link--shop > button {
-  display: inline-block;
-  background: none;
-  border: none;
-}
 .link--shop:hover {
   color: var(--secondary);
   background: var(--primary);
