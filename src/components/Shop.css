@@ -1,3 +1,30 @@
-.container--cards > .card{
+.container--cards > .card {
   grid-column: 1 / 9;
+}
+/* small tablet styles */
+@media screen and (min-width: 620px) {
+ .container--cards > .card {
+  grid-column: span 4;
+ }
+
+
+}
+
+/* large tablet & laptop styles */
+@media screen and (min-width: 960px) {
+  .container--cards {
+    grid-template-columns: repeat(12, 1fr)
+  }
+
+  .container--cards > .card {
+    grid-column: span 4;
+  }
+
+}
+
+/* desktop styles */
+@media screen and (min-width: 1200px) {
+  .container--cards > .card {
+    grid-column: span 3;
+  }
 }

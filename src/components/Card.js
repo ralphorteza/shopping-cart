@@ -23,9 +23,9 @@ export default function Card({ itemObj, handleCart }) {
         </div>
         <p className="card--type">{itemObj.type} <span></span></p>
         <p className="card--description">{itemObj.description}</p>
-        <h3 className="card--cost">₴{itemObj.cost}</h3>
-        <button className="card--add button" onClick={(e) => handleCart(e, itemObj.id)}>add</button>
       </div>
+        <h3 className="card--cost">₴{itemObj.cost}</h3>
+      <button className="card--add button" onClick={(e) => handleCart(e, itemObj.id)}>add</button>
     </div>
   );
 };
