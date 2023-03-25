@@ -11,7 +11,8 @@ export default function Card({ itemObj, handleCart }) {
         src={itemObj.imageUrl}
       />
       <div className="card--bottom">
-        <p className="card--name">{itemObj.name}</p>
+        {/* <p className="card--name">{itemObj.name}</p> */}
+        <h2 className="card--name">{itemObj.name}</h2>
         <div className="card--rating">
           <img
           src={Star}
@@ -23,9 +24,10 @@ export default function Card({ itemObj, handleCart }) {
         </div>
         <p className="card--type">{itemObj.type} <span></span></p>
         <p className="card--description">{itemObj.description}</p>
+        {/* <p className="card--cost">₴{itemObj.cost}</p> */}
+        <h3 className="card--cost">₴{itemObj.cost}</h3>
+        <button className="card--add button" onClick={(e) => handleCart(e, itemObj.id)}>add</button>
       </div>
-      <p className="card--cost">₴{itemObj.cost}</p>
-      <button className="button" onClick={(e) => handleCart(e, itemObj.id)}>add</button>
     </div>
   );
 };

@@ -29,7 +29,7 @@ export default function Shop({ items, handleCart }) {
   
   return (
     <>
-      <section className="container--card grid">{cardsArray}</section>
+      <section className="container--cards grid">{cardsArray}</section>
     </>
   );
 }
