@@ -6,6 +6,15 @@
 .checkout--info {
   margin-bottom: 10px;
   padding-bottom: 5px;
+
+  width: clamp(300px, 400px, 600px);
+}
+
+.checkout--info > * {
+  margin-bottom: 10px;
+  padding: 10px;
+  text-align: center;
+  font-size: medium;
 }
 .checkout--subtotal {
   grid-column: 1 / 9;
@@ -13,6 +22,7 @@
 }
 
 .checkout--cards {
+  margin-top: 10px;
   row-gap: 10px;
   margin-bottom: 10px;
 }
