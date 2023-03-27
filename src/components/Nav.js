@@ -20,7 +20,6 @@ export default function Nav({ totalQuantity }) {
         <h1>FortBuy</h1>
       </Link>
       <ul>
-        {/* <li><a href="/">home</a></li> */}
         <li><Link to="/">Home</Link></li>
         <li><Link to="/shop">Shop</Link></li>
         <li><Link to="/checkout">Checkout</Link></li>
