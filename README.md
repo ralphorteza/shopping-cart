@@ -2,7 +2,7 @@
 
 A proof of concept of a webstore made via React.
 
-[Live Demo here.](http://ralphorteza.github.io/shopping-cart);
+[Live Demo here.](http://ralphorteza.github.io/shopping-cart)
 
 ## View Code in Local Machine
 ```
