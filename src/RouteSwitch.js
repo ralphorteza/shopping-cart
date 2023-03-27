@@ -76,7 +76,7 @@ export default function RouteSwitch() {
 
   return (
     <BrowserRouter>
-      <Nav />
+      <Nav totalQuantity={totalQuantity}/>
       <Routes>
         <Route path="/shopping-cart" element={<Navigate to="/" />} />
         <Route path="/" element={<HomePage />} />

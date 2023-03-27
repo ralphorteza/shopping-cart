@@ -18,6 +18,19 @@
   grid-column: 8/9;
 }
 
+.dot {
+  height: 1.2em;
+  width: 1.2em;
+  background-color: red;
+  border-radius: 50%;
+  display: inline-block;
+  transform: translate(-75%, -75%);
+
+  text-align: center;
+  color: var(--secondary);
+  font-weight: 700;
+}
+
 .navbar {
   background-color: var(--primary);
 }
@@ -35,7 +48,11 @@
 /* large tablet & laptop styles */
 @media screen and (min-width: 960px) {
   .cart {
-    width: 120%;
+    width: 90%;
+  }
+
+  .dot {
+    transform: translate(90%, -225%);
   }
 }
 
