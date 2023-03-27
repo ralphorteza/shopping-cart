@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 
 export default function Checkout({
   cart,
+  subtotal,
+  totalQuantity,
   removeItemFromCart,
   subQuantity,
   addQuantity,
@@ -19,12 +21,14 @@ export default function Checkout({
     />
   ));
 
+  const formattedSubtotal = subtotal.toLocaleString("en-US");
+
   return (
     <div className="checkout">
       <section className="checkout--info grid">
-        <h3 className="checkout--subtotal">SubTotal: ₴34,444</h3>
+        <h2 className="checkout--subtotal">subtotal: <span>₴{formattedSubtotal}</span></h2>
         <Link className="link--shop button" to="/shop">Continue Shopping</Link>
-        <button className="button">Checkout</button>
+        <button className="button">Checkout <span>({totalQuantity} items)</span></button>
       </section>
       <section className="checkout--cards grid">
         {checkoutCardsArray}

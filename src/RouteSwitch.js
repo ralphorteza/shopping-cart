@@ -13,11 +13,13 @@ export default function RouteSwitch() {
   const [cart, setCart] = React.useState(
     () => JSON.parse(localStorage.getItem("cart")) || []
   );
-
+  const subtotal = cart.reduce((prev, curr) => prev + (curr.amount * curr.cost), 0);
+  const totalQuantity = cart.reduce((prev, curr) => prev + curr.amount, 0);
+  
   React.useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cart));
-
   }, [cart]);
+
 
   function addItemToCart(id) {
     const matchedItem = items.find(item => item.itemId === id);
@@ -31,6 +33,7 @@ export default function RouteSwitch() {
 
     setCart(prevState => [...prevState, newItem]);
   }
+
 
   function removeItemFromCart(e, id) {
     e.stopPropagation();
@@ -62,7 +65,11 @@ export default function RouteSwitch() {
     setCart(prevCart => {
       return prevCart.map( item => {
         if (item.id !== id) return item;
-        return {...item, amount: editItem.amount - 1}
+        if (item.id === id && item.amount < 2) {
+          return item;
+        } else{
+          return {...item, amount: editItem.amount - 1}
+        }
       });
     });
   }
@@ -85,6 +92,8 @@ export default function RouteSwitch() {
           element={
             <Checkout
               cart={cart}
+              subtotal={subtotal}
+              totalQuantity={totalQuantity}
               handleCart={handleCart}
               subQuantity={subQuantity}
               addQuantity={addQuantity}

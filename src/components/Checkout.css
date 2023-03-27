@@ -21,6 +21,11 @@
   text-align: center;
 }
 
+.checkout--subtotal  span {
+  font-size: 1.4em;
+  font-weight: bold;
+}
+
 .checkout--cards {
   margin-top: 10px;
   row-gap: 10px;
@@ -29,6 +34,10 @@
 
 .button {
   grid-column: 2 / 8;
+}
+
+.button span {
+  font-weight: 400;
 }
 
 
