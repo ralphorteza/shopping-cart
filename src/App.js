@@ -9,6 +9,9 @@ import Footer from "./components/Footer";
 import HomePage from "./components/HomePage";
 import Nav from "./components/Nav";
 import Shop from "./components/Shop";
+import UpdateProfile from "./components/auth/UpdateProfile";
+import ForgotPassword from "./components/auth/ForgotPassword";
+import { useAuth } from "./components/auth/AuthContext";
 
 export default function App() {
   const items = data.data;
@@ -76,6 +79,13 @@ export default function App() {
     });
   }
 
+
+  function RequiredAuth({ children, redirectTo }) {
+    const { currentUser } = useAuth();
+    // console.log(currentUser);
+    return currentUser ? children : <Navigate to={redirectTo} />;
+  }
+  // TODO: forgot password implementation where it can't load page if logged in
   return (
     <BrowserRouter>
       <AuthProvider>
@@ -85,6 +95,13 @@ export default function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/update-profile" element={
+              <RequiredAuth redirectTo={"/login"}>
+                <UpdateProfile />
+              </RequiredAuth>
+            }
+          />
+          <Route path="/forgot-password" element={ <ForgotPassword />}/>
           <Route path="/shop"
             element={
             <Shop
