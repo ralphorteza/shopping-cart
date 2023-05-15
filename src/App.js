@@ -7,7 +7,7 @@ import HomePage from "./components/HomePage";
 import Nav from "./components/Nav";
 import Shop from "./components/Shop"
 
-export default function RouteSwitch() {
+export default function App() {
   
   const items = data.data;
   const [cart, setCart] = React.useState(
