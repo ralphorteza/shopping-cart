@@ -86,6 +86,11 @@ export default function App() {
     return currentUser ? children : <Navigate to={redirectTo} />;
   }
   // TODO: forgot password implementation where it can't load page if logged in
+  function NoAuth({ children, redirectTo }) {
+    const { currentUser } = useAuth();
+    return !currentUser ? children : <Navigate to={redirectTo} />;
+  }
+
   return (
     <BrowserRouter>
       <AuthProvider>
@@ -101,7 +106,13 @@ export default function App() {
               </RequiredAuth>
             }
           />
-          <Route path="/forgot-password" element={ <ForgotPassword />}/>
+          {/* <Route path="/forgot-password" element={ <ForgotPassword />}/> */}
+          <Route path="/forgot-password" element={
+              <NoAuth redirectTo={"/update-profile"}>
+                <ForgotPassword />
+              </NoAuth>
+            }
+          />
           <Route path="/shop"
             element={
             <Shop
