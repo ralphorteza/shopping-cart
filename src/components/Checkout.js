@@ -1,7 +1,8 @@
 import React from "react";
 import "./Checkout.css"
 import CheckoutCard from "./CheckoutCard";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "./auth/AuthContext";
 
 export default function Checkout({
   cart,
@@ -22,13 +23,23 @@ export default function Checkout({
   ));
 
   const formattedSubtotal = subtotal.toLocaleString("en-US");
+  const { currentUser } = useAuth();
+  const navigate = useNavigate();
+
+  function handleNoSignIn() {
+    navigate("/login");
+  }
 
   return (
     <div className="checkout">
       <section className="checkout--info grid">
         <h2 className="checkout--subtotal">subtotal: <span>₴{formattedSubtotal}</span></h2>
         <Link className="link--shop button" to="/shop">Continue Shopping</Link>
-        <button className="button">Checkout <span>({totalQuantity} items)</span></button>
+        <button 
+          className="button"
+          onClick={!currentUser && handleNoSignIn}
+        >Checkout <span>({totalQuantity} items)</span>
+        </button>
       </section>
       <section className="checkout--cards grid">
         {checkoutCardsArray}

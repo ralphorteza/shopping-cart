@@ -82,10 +82,9 @@ export default function App() {
 
   function RequiredAuth({ children, redirectTo }) {
     const { currentUser } = useAuth();
-    // console.log(currentUser);
     return currentUser ? children : <Navigate to={redirectTo} />;
   }
-  // TODO: forgot password implementation where it can't load page if logged in
+
   function NoAuth({ children, redirectTo }) {
     const { currentUser } = useAuth();
     return !currentUser ? children : <Navigate to={redirectTo} />;
@@ -98,15 +97,24 @@ export default function App() {
         <Routes>
           <Route path="/shopping-cart" element={<Navigate to="/" />} />
           <Route path="/" element={<HomePage />} />
-          <Route path="/signup" element={<Signup />} />
-          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={
+            <NoAuth redirectTo={"/shopping-cart"}>
+              <Signup />
+            </NoAuth>
+            }
+          />
+          <Route path="/login" element={
+              <NoAuth redirectTo={"/shopping-cart"}>
+                <Login />
+              </NoAuth>
+            }
+          />
           <Route path="/update-profile" element={
               <RequiredAuth redirectTo={"/login"}>
                 <UpdateProfile />
               </RequiredAuth>
             }
           />
-          {/* <Route path="/forgot-password" element={ <ForgotPassword />}/> */}
           <Route path="/forgot-password" element={
               <NoAuth redirectTo={"/update-profile"}>
                 <ForgotPassword />

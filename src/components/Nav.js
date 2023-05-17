@@ -41,8 +41,7 @@ export default function Nav({ totalQuantity }) {
       </Link>
       {error && <h1>{error}</h1>}
       {location.pathname !== '/signup' && location.pathname !== '/login' && !currentUser && <button onClick={handleLogin}>Login</button>}
-      {/* {currentUser && <strong>{currentUser.email}</strong>} */}
-      {currentUser && <Link to="/update-profile">{currentUser.email}</Link>} 
+      {currentUser && location.pathname !== '/update-profile' && <Link to="/update-profile">{currentUser.email}</Link>} 
       {currentUser && <button onClick={handleLogout}>logout</button>}
       <Link className="cart--link" to="/checkout">
         <img className="cart" src={Cart} alt="checkout cart"></img>{amountItem}
