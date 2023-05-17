@@ -18,3 +18,5 @@ npm start
 * js
 * fortnite-api.com (for data)
 
+## TODOS:
+  - Link user account shopping carts to their account
