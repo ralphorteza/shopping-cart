@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Signup from "./components/auth/Signup";
 import { AuthProvider } from "./components/auth/AuthContext";
 import Login from "./components/auth/Login";
-import data from "./data";
+import FortNiteItems from "./FortNiteItems";
 import Checkout from "./components/Checkout";
 import Footer from "./components/Footer";
 import HomePage from "./components/HomePage";
@@ -14,7 +14,7 @@ import ForgotPassword from "./components/auth/ForgotPassword";
 import { useAuth } from "./components/auth/AuthContext";
 
 export default function App() {
-  const items = data.data;
+  const items = FortNiteItems.data;
   const [cart, setCart] = React.useState(
     () => JSON.parse(localStorage.getItem("cart")) || []
   );

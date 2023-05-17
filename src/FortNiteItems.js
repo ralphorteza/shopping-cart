@@ -1,7 +1,5 @@
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
-    "lastUpdate": 0,
-    "lanuage": "en",
     "data": [
       {
         "itemId": "0f59626d-987f-4f76-acde-361bfe4f8cb2",
