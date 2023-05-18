@@ -1,8 +1,11 @@
 import React from "react";
 import "./Shop.css"
 import Card from "./Card";
+import { useCart } from "../cart/CartContext";
 
-export default function Shop({ items, handleCart }) {
+
+export default function Shop() {
+  const { items } = useCart();
   const itemsArray = [];
 
   items.forEach( item => {
@@ -23,7 +26,6 @@ export default function Shop({ items, handleCart }) {
     <Card 
       key={item.id}
       itemObj={item}
-      handleCart={handleCart}
     />
   ));
   

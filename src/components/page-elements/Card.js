@@ -1,8 +1,20 @@
 import React from "react";
 import './Card.css'
 import Star from "../../images/star.svg";
+import { useCart } from "../cart/CartContext";
 
-export default function Card({ itemObj, handleCart }) {
+export default function Card({ itemObj }) {
+  const { cart, addItemToCart, addItemQuantity} = useCart();
+
+  function handleAddButton(e, itemId) {
+    e.stopPropagation();
+    if (cart.some(item => item.id === itemId)) {
+      addItemQuantity(itemId);
+    } else {
+      addItemToCart(itemId);
+    }
+  }
+
   return (
     <div className="card">
       <img
@@ -25,7 +37,8 @@ export default function Card({ itemObj, handleCart }) {
         <p className="card--description">{itemObj.description}</p>
       </div>
         <h3 className="card--cost">₴{itemObj.cost}</h3>
-      <button className="card--add button" onClick={(e) => handleCart(e, itemObj.id)}>add</button>
+      {/* <button className="card--add button" onClick={(e) => handleCart(e, itemObj.id)}>add</button> */}
+      <button className="card--add button" onClick={(e) => handleAddButton(e, itemObj.id)}>add</button>
     </div>
   );
 };

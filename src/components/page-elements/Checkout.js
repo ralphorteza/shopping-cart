@@ -3,22 +3,15 @@ import "./Checkout.css"
 import CheckoutCard from "./CheckoutCard";
 import { Link, useNavigate } from "react-router-dom";
 import  { useAuth } from "../auth/AuthContext";
+import { useCart } from "../cart/CartContext";
+// import { v4 as uuidv4 } from "uuid";
 
-export default function Checkout({
-  cart,
-  subtotal,
-  totalQuantity,
-  removeItemFromCart,
-  subQuantity,
-  addQuantity,
-}) {
+export default function Checkout() {
+  const { cart, subtotal, totalQuantity } = useCart();
   const checkoutCardsArray = cart.map(item => (
     <CheckoutCard
       key={item.id}
       item={item}
-      subQuantity={subQuantity}
-      addQuantity={addQuantity}
-      removeItemFromCart={removeItemFromCart}
     />
   ));
 
