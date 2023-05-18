@@ -37,7 +37,7 @@ export default function Checkout({
         <Link className="link--shop button" to="/shop">Continue Shopping</Link>
         <button 
           className="button"
-          onClick={!currentUser && handleNoSignIn}
+          onClick={!currentUser ? handleNoSignIn : null}
         >Checkout <span>({totalQuantity} items)</span>
         </button>
       </section>
