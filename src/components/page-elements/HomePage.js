@@ -1,6 +1,6 @@
 import './HomePage.css';
 import { Link } from "react-router-dom";
-import banner from "../images/fortnite-banner.jpeg";
+import banner from "../../images/fortnite-banner.jpeg"
 
 export default function HomePage() {
   return (

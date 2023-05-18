@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import "./Nav.css"
-import Cart from "../images/shopping-cart.svg";
+import Cart from "../../images/shopping-cart.svg";
 import { Link, useNavigate, useLocation } from "react-router-dom";
-import { useAuth } from "./auth/AuthContext";
+import { useAuth } from "../auth/AuthContext";
 
 export default function Nav({ totalQuantity }) {
   const { currentUser, logout } = useAuth();

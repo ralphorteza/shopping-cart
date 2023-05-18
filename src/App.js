@@ -4,11 +4,11 @@ import Signup from "./components/auth/Signup";
 import { AuthProvider } from "./components/auth/AuthContext";
 import Login from "./components/auth/Login";
 import FortNiteItems from "./FortNiteItems";
-import Checkout from "./components/Checkout";
-import Footer from "./components/Footer";
-import HomePage from "./components/HomePage";
-import Nav from "./components/Nav";
-import Shop from "./components/Shop";
+import Checkout from "./components/page-elements/Checkout";
+import Footer from "./components/page-elements/Footer";
+import HomePage from "./components/page-elements/HomePage";
+import Nav from "./components/page-elements/Nav";
+import Shop from "./components/page-elements/Shop";
 import UpdateProfile from "./components/auth/UpdateProfile";
 import ForgotPassword from "./components/auth/ForgotPassword";
 import { useAuth } from "./components/auth/AuthContext";
@@ -89,8 +89,6 @@ export default function App() {
     const { currentUser } = useAuth();
     return !currentUser ? children : <Navigate to={redirectTo} />;
   }
-
-  console.log(items);
 
   return (
     <BrowserRouter>

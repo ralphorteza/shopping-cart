@@ -1,6 +1,6 @@
 import React from "react";
 import './Card.css'
-import Star from "../images/star.svg";
+import Star from "../../images/star.svg";
 
 export default function Card({ itemObj, handleCart }) {
   return (

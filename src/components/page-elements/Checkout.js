@@ -2,7 +2,7 @@ import React from "react";
 import "./Checkout.css"
 import CheckoutCard from "./CheckoutCard";
 import { Link, useNavigate } from "react-router-dom";
-import { useAuth } from "./auth/AuthContext";
+import  { useAuth } from "../auth/AuthContext";
 
 export default function Checkout({
   cart,
