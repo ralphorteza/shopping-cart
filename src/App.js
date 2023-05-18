@@ -90,6 +90,8 @@ export default function App() {
     return !currentUser ? children : <Navigate to={redirectTo} />;
   }
 
+  console.log(items);
+
   return (
     <BrowserRouter>
       <AuthProvider>
