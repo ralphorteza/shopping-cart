@@ -1,6 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import FortNiteItems from "../../FortNiteItems";
-
+import { useShop } from "../../contexts/ShopContext";
 const CartContext = React.createContext();
 
 export function useCart() {
@@ -8,7 +7,7 @@ export function useCart() {
 }
 
 export function CartProvider({ children }) {
-  const items = FortNiteItems.data;
+  const { shopItems } = useShop();
   const [cart, setCart] = useState(
     () => JSON.parse(localStorage.getItem("cart")) || []
   );
@@ -21,7 +20,7 @@ export function CartProvider({ children }) {
   }, [cart]);
 
   function addItemToCart(itemId) {
-    const matchedItem = items.find(item => item.itemId === itemId);
+    const matchedItem = shopItems.find(item => item.itemId === itemId);
     let newItem = {
       amount: 1,
       id: matchedItem.itemId,
@@ -64,7 +63,6 @@ export function CartProvider({ children }) {
   }
 
   const value = {
-    items,
     cart,
     subtotal,
     totalQuantity,
