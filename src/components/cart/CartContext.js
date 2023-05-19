@@ -51,7 +51,7 @@ export function CartProvider({ children }) {
     const editItem = cart.find(item => item.id === itemId);
     
     setCart(prevCart => {
-      return prevCart.map( item => {
+      return prevCart.map(item => {
         if (item.id !== itemId) return item;
         if (item.id === itemId && item.amount < 2) {
           return item;
@@ -63,15 +63,15 @@ export function CartProvider({ children }) {
   }
 
   const value = {
+    items,
     cart,
     subtotal,
     totalQuantity,
     addItemToCart,
     addItemQuantity,
     removeItemFromCart,
-    subtractItemQuantity,
-    items
-  }
+    subtractItemQuantity
+  };
 
   return (
     <CartContext.Provider value={value}>

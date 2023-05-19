@@ -37,7 +37,6 @@ export default function Card({ itemObj }) {
         <p className="card--description">{itemObj.description}</p>
       </div>
         <h3 className="card--cost">₴{itemObj.cost}</h3>
-      {/* <button className="card--add button" onClick={(e) => handleCart(e, itemObj.id)}>add</button> */}
       <button className="card--add button" onClick={(e) => handleAddButton(e, itemObj.id)}>add</button>
     </div>
   );

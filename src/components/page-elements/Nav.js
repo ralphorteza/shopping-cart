@@ -4,6 +4,7 @@ import Cart from "../../images/shopping-cart.svg";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useAuth } from "../auth/AuthContext";
 import { useCart } from "../cart/CartContext";
+
 export default function Nav() {
   const { currentUser, logout } = useAuth();
   const { totalQuantity } = useCart();

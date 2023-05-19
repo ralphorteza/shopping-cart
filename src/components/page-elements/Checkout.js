@@ -4,7 +4,6 @@ import CheckoutCard from "./CheckoutCard";
 import { Link, useNavigate } from "react-router-dom";
 import  { useAuth } from "../auth/AuthContext";
 import { useCart } from "../cart/CartContext";
-// import { v4 as uuidv4 } from "uuid";
 
 export default function Checkout() {
   const { cart, subtotal, totalQuantity } = useCart();

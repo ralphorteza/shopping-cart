@@ -12,7 +12,7 @@ export default function CheckoutCard({ item }) {
 
   function handleAddQuantityButton(e, itemId) {
     e.stopPropagation();
-    return addItemQuantity(itemId)
+    return addItemQuantity(itemId);
   }
 
   function handleRemoveItemButton(e, itemId) {
