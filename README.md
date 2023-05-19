@@ -19,5 +19,5 @@ npm start
 * fortnite-api.com (for data)
 
 ## TODOS:
-  - Revise shopping-cart prop drilling into a context
+  - ~~Revise shopping-cart prop drilling into a context~~
   - Link user account shopping carts to their account

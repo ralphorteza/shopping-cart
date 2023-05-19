@@ -7,7 +7,7 @@ export default function Signup() {
   const passwordRef = useRef();
   const passwordConfirmationRef = useRef();
   const { signup } = useAuth();
-  const [error, setError] = useState('');
+  const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
@@ -16,15 +16,15 @@ export default function Signup() {
     console.log("inside handledSubmit!")
     if (
       passwordRef.current.value !== passwordConfirmationRef.current.value
-    ) return setError('Passwords do not match');
+    ) return setError("Passwords do not match");
 
     try {
-      setError('')
+      setError("")
       setLoading(true);
       await signup(emailRef.current.value, passwordRef.current.value);
       navigate("/");
     } catch {
-      setError('Failed to create an account');
+      setError("Failed to create an account");
     }
 
     setLoading(false);

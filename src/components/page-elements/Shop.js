@@ -1,14 +1,32 @@
-import React from "react";
 import "./Shop.css"
 import Card from "./Card";
-import { useCart } from "../cart/CartContext";
-
+import { collection, onSnapshot } from "firebase/firestore";
+import { db } from "../../firebase";
+import { useEffect, useState } from "react";
 
 export default function Shop() {
-  const { items } = useCart();
+  const collectionRef = collection(db, "items");
+  const [shopItems, setShopItems] = useState([]);
+  const [loading, setLoading] = useState(false);
   const itemsArray = [];
+  
+  useEffect(() => {
+    setLoading(true);
+    const unsubscribe = onSnapshot(collectionRef, (querySnapshot) => {
+      const items = [];
+      querySnapshot.forEach((doc) => {
+        items.push(doc.data());
+      });
+      setShopItems(items);
+      setLoading(false);
+    });
+    console.log("Shop useEffect ran");
+    return () => {
+      unsubscribe();
+    }
+  }, []);
 
-  items.forEach( item => {
+  shopItems.forEach((item) => {
     itemsArray.push(
       {
         name: item.item.name,

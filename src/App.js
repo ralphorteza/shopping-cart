@@ -60,7 +60,7 @@ export default function App() {
             <Route path="/checkout" element={<Checkout />} />
           </Routes>
           <Footer />
-          </CartProvider>
+        </CartProvider>
       </AuthProvider>
     </BrowserRouter>
   )
