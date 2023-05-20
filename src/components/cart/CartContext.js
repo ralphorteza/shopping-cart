@@ -1,12 +1,15 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useShop } from "../../contexts/ShopContext";
+
 const CartContext = React.createContext();
 
 export function useCart() {
   return useContext(CartContext);
 }
 
+// TODO: Implement server-side cart storage.
 export function CartProvider({ children }) {
+
   const { shopItems } = useShop();
   const [cart, setCart] = useState(
     () => JSON.parse(localStorage.getItem("cart")) || []
@@ -25,7 +28,7 @@ export function CartProvider({ children }) {
       amount: 1,
       id: matchedItem.itemId,
       imageUrl: matchedItem.item.images.icon,
-      name: matchedItem.name,
+      name: matchedItem.item.name,
       cost: matchedItem.item.cost
     };
 
@@ -71,6 +74,8 @@ export function CartProvider({ children }) {
     removeItemFromCart,
     subtractItemQuantity
   };
+
+  console.log(cart);
 
   return (
     <CartContext.Provider value={value}>

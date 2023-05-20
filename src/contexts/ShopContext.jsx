@@ -10,6 +10,7 @@ export function useShop() {
 export function ShopProvider({ children }) {
   const collectionRef = collection(db, "items");
   const [shopItems, setShopItems] = useState([]);
+  // eslint-disable-next-line
   const [loading, setLoading] = useState(false);
   
   useEffect(() => {
