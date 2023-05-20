@@ -30,7 +30,7 @@ export function ShopProvider({ children }) {
     // eslint-disable-next-line
   }, []);
 
-  console.log(shopItems);
+  // console.log(shopItems);
   const value = {
     shopItems
   }
