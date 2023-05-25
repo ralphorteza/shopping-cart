@@ -4,7 +4,12 @@ import { useCart } from "../cart/CartContext";
 
 export default function CheckoutCard({ item }) {
 
-  const { addItemQuantity, subtractItemQuantity, removeItemFromCart, deleteProductFromCart} = useCart();
+  const {
+    addItemQuantity,
+    subtractItemQuantity,
+    deleteProductFromCart
+  } = useCart();
+
   function handleSubQuantityButton(e, itemId) {
     e.stopPropagation();
     return subtractItemQuantity(itemId);
@@ -19,10 +24,6 @@ export default function CheckoutCard({ item }) {
     e.stopPropagation();
     return deleteProductFromCart(itemId);
   }
-  // function handleRemoveItemButton(e, itemId) {
-  //   e.stopPropagation();
-  //   return removeItemFromCart(itemId);
-  // }
 
   return (
     <div className="checkout-card grid">

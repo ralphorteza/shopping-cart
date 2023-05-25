@@ -1,9 +1,17 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useShop } from "../../contexts/ShopContext";
 import { useAuth } from "../auth/AuthContext";
-import { getDoc, doc, serverTimestamp, setDoc, collection, collectionGroup, onSnapshot, query, where } from "@firebase/firestore";
+import { 
+  getDoc,
+  doc,
+  serverTimestamp,
+  setDoc,
+  collectionGroup,
+  onSnapshot,
+  query,
+  where
+} from "@firebase/firestore";
 import { db } from "../../firebase";
-import { v4 as uuidv4 } from "uuid";
 import { deleteDoc } from "firebase/firestore";
 
 const CartContext = React.createContext();
@@ -17,68 +25,9 @@ export function CartProvider({ children }) {
 
   const { currentUser } = useAuth();
   const { shopItems } = useShop();
-  const [cart, setCart] = useState(
-    () => JSON.parse(localStorage.getItem("cart")) || []
-    );
-    
-    const subtotal = cart.reduce((prev, curr) => prev + (curr.amount * curr.cost), 0);
-    const totalQuantity = cart.reduce((prev, curr) => prev + curr.amount, 0);
-    
-    useEffect(() => {
-      localStorage.setItem("cart", JSON.stringify(cart));
-      console.log("cart json stringify ran");
-    }, [cart]);
-    
-    function addItemToCart(itemId) {
-      const matchedItem = shopItems.find(item => item.itemId === itemId);
-      let newItem = {
-        amount: 1,
-        id: matchedItem.itemId,
-        imageUrl: matchedItem.item.images.icon,
-        name: matchedItem.item.name,
-        cost: matchedItem.item.cost,
-        createdAt: serverTimestamp(),
-        lastUpdate: serverTimestamp(),
-      };
-      
-      setCart(prevCart => [...prevCart, newItem]);
-    }
-  
-  // function addItemQuantity(itemId) {
-  //   const editItem = cart.find(item => item.id === itemId);
-    
-  //   setCart(prevCart => {
-  //     return prevCart.map( item => {
-  //       if (item.id !== itemId) return item;
-  //       return {...item, amount: editItem.amount + 1}
-  //     });
-  //   });
-  // }
-  
-  function removeItemFromCart(itemId) {
-    setCart(prevState => prevState.filter(item => item.id !== itemId));
-  }
-  
-  // function subtractItemQuantity(itemId) {
-  //   const editItem = cart.find(item => item.id === itemId);
-    
-  //   setCart(prevCart => {
-  //     return prevCart.map(item => {
-  //       if (item.id !== itemId) return item;
-  //       if (item.id === itemId && item.amount < 2) {
-  //         return item;
-  //       } else{
-  //         return {...item, amount: editItem.amount - 1}
-  //       }
-  //     });
-  //   });
-  // }
-  
-  // server-side implmentations
   const [eCart, setECart] = useState([]);
   const [loading, setLoading] = useState(false);
   const currentUserId = currentUser ? currentUser.uid : null;
-  // console.log(carts);
   
   // outputs user's cart-items if logged in. When logged out in same session,
   // it carries the items until refreshed. 
@@ -117,7 +66,6 @@ export function CartProvider({ children }) {
     };
 
     try {
-      // const productRef = doc(collection(db, "carts", owner, "cart-items"));
       const productRef = doc(db, "carts", owner, "cart-items", matchedItem.itemId);
       await setDoc(productRef, newProduct, { merge: true });
     } catch(error) {
@@ -191,15 +139,10 @@ export function CartProvider({ children }) {
   console.log(eCart);
 
   const value = {
-    cart,
-    subtotal,
-    totalQuantity,
-    addItemToCart,
+    eCart,
     addItemQuantity,
-    removeItemFromCart,
     subtractItemQuantity,
     addProductToCart,
-    eCart,
     deleteProductFromCart
   };
   
