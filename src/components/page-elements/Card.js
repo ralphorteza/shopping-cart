@@ -14,7 +14,7 @@ export default function Card({ itemObj }) {
   //     addItemToCart(itemId);
   //   }
   // }
-
+  // TODO: clicking add multiple times to add quantity
   function handleAddButton(e, itemId) {
     e.stopPropagation();
     addProductToCart(itemId);

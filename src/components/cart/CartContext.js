@@ -59,20 +59,20 @@ export function CartProvider({ children }) {
     setCart(prevState => prevState.filter(item => item.id !== itemId));
   }
   
-  function subtractItemQuantity(itemId) {
-    const editItem = cart.find(item => item.id === itemId);
+  // function subtractItemQuantity(itemId) {
+  //   const editItem = cart.find(item => item.id === itemId);
     
-    setCart(prevCart => {
-      return prevCart.map(item => {
-        if (item.id !== itemId) return item;
-        if (item.id === itemId && item.amount < 2) {
-          return item;
-        } else{
-          return {...item, amount: editItem.amount - 1}
-        }
-      });
-    });
-  }
+  //   setCart(prevCart => {
+  //     return prevCart.map(item => {
+  //       if (item.id !== itemId) return item;
+  //       if (item.id === itemId && item.amount < 2) {
+  //         return item;
+  //       } else{
+  //         return {...item, amount: editItem.amount - 1}
+  //       }
+  //     });
+  //   });
+  // }
   
   // server-side implmentations
   const [eCart, setECart] = useState([]);
@@ -126,16 +126,48 @@ export function CartProvider({ children }) {
   }
 
   // TODO: Add quantity of item
-  async function addItemQuantity(itemId) {
-    
+  async function addItemQuantity(itemId) {  
     try {
       const productRef = doc(db, "carts", currentUserId, "cart-items", itemId);
       const docSnap = await getDoc(productRef);
-      if (docSnap.exists()) {
-        console.log(`Document data: ${docSnap.data().amount}`);
-      } else {
-        console.log("no such document");
-      }
+      const updatedQuantity = Number(docSnap.data().amount) + 1;
+
+      const updatedProduct = {
+        userId: docSnap.data().userId,
+        email: docSnap.data().email,
+        amount: updatedQuantity,
+        id: docSnap.data().id,
+        imageUrl: docSnap.data().imageUrl,
+        name: docSnap.data().name,
+        cost: docSnap.data().cost
+      };
+
+      await setDoc(productRef, updatedProduct, { merge: true });
+    } catch(error) {
+      console.log(error);
+    }
+  }
+
+  // TODO: Subtract quantity item
+  async function subtractItemQuantity(itemId) {
+    try {
+      const productRef = doc(db, "carts", currentUserId, "cart-items", itemId);
+      const docSnap = await getDoc(productRef);
+      const updatedQuantity = Number(docSnap.data().amount) - 1;
+
+      if (updatedQuantity < 1) return;
+
+      const updatedProduct = {
+        userId: docSnap.data().userId,
+        email: docSnap.data().email,
+        amount: updatedQuantity,
+        id: docSnap.data().id,
+        imageUrl: docSnap.data().imageUrl,
+        name: docSnap.data().name,
+        cost: docSnap.data().cost
+      };
+
+      await setDoc(productRef, updatedProduct, { merge: true });
     } catch(error) {
       console.log(error);
     }
@@ -153,6 +185,8 @@ export function CartProvider({ children }) {
       console.log(error);
     }
   }
+
+  // TODO: Get subtotal and total items
   
   console.log(eCart);
 
