@@ -6,8 +6,15 @@ import  { useAuth } from "../auth/AuthContext";
 import { useCart } from "../cart/CartContext";
 
 export default function Checkout() {
-  const { cart, subtotal, totalQuantity } = useCart();
-  const checkoutCardsArray = cart.map(item => (
+  const { cart, subtotal, totalQuantity, eCart } = useCart();
+  // const checkoutCardsArray = cart.map(item => (
+  //   <CheckoutCard
+  //     key={item.id}
+  //     item={item}
+  //   />
+  // ));
+
+  const checkoutCardsArray = eCart.map(item => (
     <CheckoutCard
       key={item.id}
       item={item}
@@ -30,7 +37,8 @@ export default function Checkout() {
         <button 
           className="button"
           onClick={!currentUser ? handleNoSignIn : null}
-        >Checkout <span>({totalQuantity} items)</span>
+        >
+          Checkout<span> ({totalQuantity} items)</span>
         </button>
       </section>
       <section className="checkout--cards grid">

@@ -4,15 +4,20 @@ import Star from "../../images/star.svg";
 import { useCart } from "../cart/CartContext";
 
 export default function Card({ itemObj }) {
-  const { cart, addItemToCart, addItemQuantity} = useCart();
+  const { cart, addItemToCart, addItemQuantity, addProductToCart} = useCart();
+
+  // function handleAddButton(e, itemId) {
+  //   e.stopPropagation();
+  //   if (cart.some(item => item.id === itemId)) {
+  //     addItemQuantity(itemId);
+  //   } else {
+  //     addItemToCart(itemId);
+  //   }
+  // }
 
   function handleAddButton(e, itemId) {
     e.stopPropagation();
-    if (cart.some(item => item.id === itemId)) {
-      addItemQuantity(itemId);
-    } else {
-      addItemToCart(itemId);
-    }
+    addProductToCart(itemId);
   }
 
   return (
