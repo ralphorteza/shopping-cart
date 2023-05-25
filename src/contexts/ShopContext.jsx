@@ -23,7 +23,7 @@ export function ShopProvider({ children }) {
       setShopItems(items);
       setLoading(false);
     });
-    console.log("Shop useEffect ran");
+    // console.log("Shop useEffect ran");
     return () => {
       unsubscribe();
     }

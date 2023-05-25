@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { useShop } from "../../contexts/ShopContext";
 import { useAuth } from "../auth/AuthContext";
 import { 
+  updateDoc,
   getDoc,
   doc,
   serverTimestamp,
@@ -42,10 +43,9 @@ export function CartProvider({ children }) {
         eCartItems.push(doc.data());
       });
       setECart(eCartItems);
-      console.log(`ecartItems: ${eCartItems}`);
       setLoading(false);
     });
-    console.log("useEffect eCart ran");
+    // console.log("useEffect eCart ran");
     return unsubscribe;
   }, [currentUserId]);
 
@@ -66,7 +66,13 @@ export function CartProvider({ children }) {
     };
 
     try {
+      const cartRef = doc(db, "carts", owner);
       const productRef = doc(db, "carts", owner, "cart-items", matchedItem.itemId);
+      await setDoc(cartRef, {
+        owner: currentUser.email,
+        createdDate: serverTimestamp(),
+        lastModified: serverTimestamp(),
+      });
       await setDoc(productRef, newProduct, { merge: true });
     } catch(error) {
       console.log(error);
@@ -76,21 +82,13 @@ export function CartProvider({ children }) {
   // TODO: Add quantity of item
   async function addItemQuantity(itemId) {  
     try {
+      const cartRef = doc(db,"carts", currentUserId);
       const productRef = doc(db, "carts", currentUserId, "cart-items", itemId);
       const docSnap = await getDoc(productRef);
       const updatedQuantity = Number(docSnap.data().amount) + 1;
 
-      const updatedProduct = {
-        userId: docSnap.data().userId,
-        email: docSnap.data().email,
-        amount: updatedQuantity,
-        id: docSnap.data().id,
-        imageUrl: docSnap.data().imageUrl,
-        name: docSnap.data().name,
-        cost: docSnap.data().cost
-      };
-
-      await setDoc(productRef, updatedProduct, { merge: true });
+      await updateDoc(cartRef, {lastModified: serverTimestamp()});
+      await updateDoc(productRef, {amount: updatedQuantity});
     } catch(error) {
       console.log(error);
     }
@@ -99,23 +97,15 @@ export function CartProvider({ children }) {
   // TODO: Subtract quantity item
   async function subtractItemQuantity(itemId) {
     try {
+      const cartRef = doc(db,"carts", currentUserId);
       const productRef = doc(db, "carts", currentUserId, "cart-items", itemId);
       const docSnap = await getDoc(productRef);
       const updatedQuantity = Number(docSnap.data().amount) - 1;
 
       if (updatedQuantity < 1) return;
 
-      const updatedProduct = {
-        userId: docSnap.data().userId,
-        email: docSnap.data().email,
-        amount: updatedQuantity,
-        id: docSnap.data().id,
-        imageUrl: docSnap.data().imageUrl,
-        name: docSnap.data().name,
-        cost: docSnap.data().cost
-      };
-
-      await setDoc(productRef, updatedProduct, { merge: true });
+      await updateDoc(cartRef, {lastModified: serverTimestamp()});
+      await updateDoc(productRef, {amount: updatedQuantity});
     } catch(error) {
       console.log(error);
     }
@@ -136,7 +126,7 @@ export function CartProvider({ children }) {
 
   // TODO: Get subtotal and total items
   
-  console.log(eCart);
+  // console.log(eCart);
 
   const value = {
     eCart,
