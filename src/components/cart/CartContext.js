@@ -94,10 +94,12 @@ export function CartProvider({ children }) {
 
     try {
       const cartRef = doc(db, "carts", owner);
-      const docSnap = await getDoc(cartRef);
-
+      const docSnap = await getDoc(cartRef);      
       const updatedQuantity = docSnap.data().totalQuantity + newProduct.amount;
       const productRef = doc(db, "carts", owner, "cart-items", matchedItem.itemId);
+
+      if (docSnap.exists()) return;
+      
       await updateDoc(
         cartRef,
         {
