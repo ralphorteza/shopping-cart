@@ -33,8 +33,6 @@ export function CartProvider({ children }) {
   const currentUserId = currentUser ? currentUser.uid : "unknown";
   const currentUserEmail = currentUser ? currentUser.email : "unknown";
 
-  // outputs user's cart-items if logged in. When logged out in same session,
-  // it carries the items until refreshed. 
   useEffect(() => {
     const userCartRef = collectionGroup(db, "cart-items");
     const q = query( userCartRef, where("userId", "==", currentUserId));
@@ -57,7 +55,7 @@ export function CartProvider({ children }) {
       setECart(prev => eCartItems);
       setQuantity(prev => quantity);
       setSubtotal(prev => subtotal);
-      setLoading(false);
+      setLoading(prev => !prev);
     });
 
     console.log("useEffect eCart ran");
@@ -66,8 +64,6 @@ export function CartProvider({ children }) {
 
   async function initializeCart() {    
     try {
-      console.log(`initializing cart for ${currentUserEmail}`);
-      console.log("after initializing cart");
       const cartRef = doc(db, "carts", currentUserId);
       const cartSnap = await getDoc(cartRef);
 
@@ -89,7 +85,6 @@ export function CartProvider({ children }) {
     }
   }
 
-  // TODO: Add to user's cart inside database.
   async function addProductToCart(itemId) {
     const owner = currentUser ? currentUser.uid : "unknown";
     const ownerEmail = currentUser ? currentUser.email : "unknown";
@@ -121,7 +116,7 @@ export function CartProvider({ children }) {
 
   async function addItemQuantity(itemId) {  
     try {
-      const cartRef = doc(db,"carts", currentUserId);
+      const cartRef = doc(db, "carts", currentUserId);
       const productRef = doc(db, "carts", currentUserId, "cart-items", itemId);
       const docSnap = await getDoc(productRef);
       const updatedQuantity = Number(docSnap.data().amount) + 1;
@@ -135,7 +130,7 @@ export function CartProvider({ children }) {
 
   async function subtractItemQuantity(itemId) {
     try {
-      const cartRef = doc(db,"carts", currentUserId);
+      const cartRef = doc(db, "carts", currentUserId);
       const productRef = doc(db, "carts", currentUserId, "cart-items", itemId);
       const docSnap = await getDoc(productRef);
       const updatedQuantity = Number(docSnap.data().amount) - 1;
@@ -154,7 +149,10 @@ export function CartProvider({ children }) {
     const matchedItem = shopItems.find(item => item.itemId === itemId);
 
     try {
+      const cartRef = doc(db, "carts", currentUserId);
       const productRef = doc(db, "carts", owner, "cart-items", matchedItem.itemId);
+
+      await updateDoc(cartRef, {dateLastModified: serverTimestamp()});
       await deleteDoc(productRef);
     } catch(error) {
       console.log(error);
