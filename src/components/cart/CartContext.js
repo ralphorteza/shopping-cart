@@ -28,10 +28,11 @@ export function CartProvider({ children }) {
   const { shopItems } = useShop();
   const [eCart, setECart] = useState([]);
   const [loading, setLoading] = useState(false);
-  // const [totalQuantity, setTotalQuantity] = useState(0);
-  // const [subtotal, setSubTotal] = useState(0);
+  const [quantity, setQuantity] = useState(0);
+  const [subtotal, setSubtotal] = useState(0);
   const currentUserId = currentUser ? currentUser.uid : "unknown";
   const currentUserEmail = currentUser ? currentUser.email : "unknown";
+
   // outputs user's cart-items if logged in. When logged out in same session,
   // it carries the items until refreshed. 
   useEffect(() => {
@@ -42,10 +43,20 @@ export function CartProvider({ children }) {
     
     const unsubscribe = onSnapshot(q, (querySnapshot) => {
       const eCartItems = [];
+      let quantity = 0;
+      let subtotal = 0; 
       querySnapshot.forEach((doc) => {
         eCartItems.push(doc.data());
+        const currItemQuantity = doc.data().amount;
+        const currItemCost = doc.data().cost;
+        const currItemSubtotal = currItemCost * currItemQuantity;
+        quantity += currItemQuantity;
+        subtotal += currItemSubtotal;
       });
-      setECart(eCartItems);
+
+      setECart(prev => eCartItems);
+      setQuantity(prev => quantity);
+      setSubtotal(prev => subtotal);
       setLoading(false);
     });
 
@@ -65,13 +76,15 @@ export function CartProvider({ children }) {
           owner: currentUserEmail,
           dateCreated: serverTimestamp(),
           dateLastModified: serverTimestamp(),
-          totalQuantity: 0,
-          subtotal: 0
+          totalQuantity: quantity,
+          subtotal: subtotal
         });
       } catch(error) {
         console.log(error);
       }
     };
+
+    console.log("second cart useEffect ran");
 
     return unsubscribe;
   }, [currentUserId]);
@@ -94,26 +107,18 @@ export function CartProvider({ children }) {
 
     try {
       const cartRef = doc(db, "carts", owner);
-      const docSnap = await getDoc(cartRef);      
-      const updatedQuantity = docSnap.data().totalQuantity + newProduct.amount;
       const productRef = doc(db, "carts", owner, "cart-items", matchedItem.itemId);
+      const docSnap = await getDoc(productRef);      
 
       if (docSnap.exists()) return;
       
-      await updateDoc(
-        cartRef,
-        {
-          dateLastModified: serverTimestamp(),
-          totalQuantity: updatedQuantity
-        }
-        );
-      await setDoc(productRef, newProduct, { merge: true });
+      await updateDoc(cartRef,{dateLastModified: serverTimestamp()});
+      await setDoc(productRef, newProduct, {merge: true});
     } catch(error) {
       console.log(error);
     }
   }
 
-  // TODO: Add quantity of item
   async function addItemQuantity(itemId) {  
     try {
       const cartRef = doc(db,"carts", currentUserId);
@@ -121,14 +126,13 @@ export function CartProvider({ children }) {
       const docSnap = await getDoc(productRef);
       const updatedQuantity = Number(docSnap.data().amount) + 1;
 
-      await updateDoc(cartRef, {lastModified: serverTimestamp()});
+      await updateDoc(cartRef, {dateLastModified: serverTimestamp()});
       await updateDoc(productRef, {amount: updatedQuantity});
     } catch(error) {
       console.log(error);
     }
   }
 
-  // TODO: Subtract quantity item
   async function subtractItemQuantity(itemId) {
     try {
       const cartRef = doc(db,"carts", currentUserId);
@@ -138,14 +142,13 @@ export function CartProvider({ children }) {
 
       if (updatedQuantity < 1) return;
 
-      await updateDoc(cartRef, {lastModified: serverTimestamp()});
+      await updateDoc(cartRef, {dateLastModified: serverTimestamp()});
       await updateDoc(productRef, {amount: updatedQuantity});
     } catch(error) {
       console.log(error);
     }
   }
 
-  // TODO: Remove item from user's cart inside database.
   async function deleteProductFromCart(itemId) {
     const owner = currentUser ? currentUserId : "unknown";
     const matchedItem = shopItems.find(item => item.itemId === itemId);
@@ -160,10 +163,12 @@ export function CartProvider({ children }) {
 
   const value = {
     eCart,
+    quantity,
+    subtotal,
     addItemQuantity,
-    subtractItemQuantity,
     addProductToCart,
-    deleteProductFromCart
+    deleteProductFromCart,
+    subtractItemQuantity
   };
   
   return (
