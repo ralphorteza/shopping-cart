@@ -30,37 +30,37 @@ export default function App() {
       <AuthProvider>
         <ShopProvider>
           <CartProvider>
-          <Nav />
-          <Routes>
-            <Route path="/shopping-cart" element={<Navigate to="/" />} />
-            <Route path="/" element={<HomePage />} />
-            <Route path="/signup" element={
-              <NoAuth redirectTo={"/shopping-cart"}>
-                <Signup />
-              </NoAuth>
-              }
-            />
-            <Route path="/login" element={
+            <Nav />
+            <Routes>
+              <Route path="/shopping-cart" element={<Navigate to="/" />} />
+              <Route path="/" element={<HomePage />} />
+              <Route path="/signup" element={
                 <NoAuth redirectTo={"/shopping-cart"}>
-                  <Login />
+                  <Signup />
                 </NoAuth>
-              }
-            />
-            <Route path="/update-profile" element={
-                <RequiredAuth redirectTo={"/login"}>
-                  <UpdateProfile />
-                </RequiredAuth>
-              }
-            />
-            <Route path="/forgot-password" element={
-                <NoAuth redirectTo={"/update-profile"}>
-                  <ForgotPassword />
-                </NoAuth>
-              }
-            />
-            <Route path="/shop" element={<Shop />} />
-            <Route path="/checkout" element={<Checkout />} />
-          </Routes>
+                }
+              />
+              <Route path="/login" element={
+                  <NoAuth redirectTo={"/shopping-cart"}>
+                    <Login />
+                  </NoAuth>
+                }
+              />
+              <Route path="/update-profile" element={
+                  <RequiredAuth redirectTo={"/login"}>
+                    <UpdateProfile />
+                  </RequiredAuth>
+                }
+              />
+              <Route path="/forgot-password" element={
+                  <NoAuth redirectTo={"/update-profile"}>
+                    <ForgotPassword />
+                  </NoAuth>
+                }
+              />
+              <Route path="/shop" element={<Shop />} />
+              <Route path="/checkout" element={<Checkout />} />
+            </Routes>
           <Footer />
           </CartProvider>
         </ShopProvider>

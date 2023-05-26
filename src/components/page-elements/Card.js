@@ -2,13 +2,18 @@ import React from "react";
 import './Card.css'
 import Star from "../../images/star.svg";
 import { useCart } from "../cart/CartContext";
+import { useAuth } from "../auth/AuthContext";
 
 export default function Card({ itemObj }) {
-  const { addProductToCart } = useCart();
+  const { currentUser } = useAuth();
+  const { addProductToCart, initializeCart } = useCart();
 
   // TODO: clicking add multiple times to add quantity
   function handleAddButton(e, itemId) {
     e.stopPropagation();
+    // console.log(currentUser);
+    // if (currentUser !== null) initializeCart();
+    initializeCart();
     addProductToCart(itemId);
   }
 

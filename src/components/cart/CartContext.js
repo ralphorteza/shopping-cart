@@ -64,30 +64,30 @@ export function CartProvider({ children }) {
     return unsubscribe;
   }, [currentUserId]);
 
-  // TODO: Modify to be added in firestore on sign in.
-  // BUG: does not initiate at log in. only after log out
-  useEffect(() => {
-    
-    const unsubscribe = async () => {
-      console.log(`email: ${currentUserEmail}`);
-      try {
-        const cartRef = doc(db, "carts", currentUserId);
-        await setDoc(cartRef, {
+  async function initializeCart() {    
+    try {
+      console.log(`initializing cart for ${currentUserEmail}`);
+      console.log("after initializing cart");
+      const cartRef = doc(db, "carts", currentUserId);
+      const cartSnap = await getDoc(cartRef);
+
+      if (cartSnap.exists()) return;
+
+      await setDoc(
+        cartRef, 
+        {
           owner: currentUserEmail,
           dateCreated: serverTimestamp(),
           dateLastModified: serverTimestamp(),
-          totalQuantity: quantity,
-          subtotal: subtotal
-        });
-      } catch(error) {
-        console.log(error);
-      }
-    };
+          totalQuantity: 0,
+          subtotal: 0
+        }
+      );
 
-    console.log("second cart useEffect ran");
-
-    return unsubscribe;
-  }, [currentUserId]);
+    } catch(error) {
+      console.log(error);
+    }
+  }
 
   // TODO: Add to user's cart inside database.
   async function addProductToCart(itemId) {
@@ -168,6 +168,7 @@ export function CartProvider({ children }) {
     addItemQuantity,
     addProductToCart,
     deleteProductFromCart,
+    initializeCart,
     subtractItemQuantity
   };
   
