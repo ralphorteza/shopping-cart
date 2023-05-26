@@ -30,8 +30,8 @@ export function CartProvider({ children }) {
   const [loading, setLoading] = useState(false);
   // const [totalQuantity, setTotalQuantity] = useState(0);
   // const [subtotal, setSubTotal] = useState(0);
-  const currentUserId = currentUser ? currentUser.uid : "unkown";
-  
+  const currentUserId = currentUser ? currentUser.uid : "unknown";
+  const currentUserEmail = currentUser ? currentUser.email : "unknown";
   // outputs user's cart-items if logged in. When logged out in same session,
   // it carries the items until refreshed. 
   useEffect(() => {
@@ -54,37 +54,27 @@ export function CartProvider({ children }) {
   }, [currentUserId]);
 
   // TODO: Modify to be added in firestore on sign in.
+  // BUG: does not initiate at log in. only after log out
   useEffect(() => {
-    if (currentUser === null) return;
-    // if (eCart.length !== 0) return;
-
-    setLoading(true);
-
+    
     const unsubscribe = async () => {
-      const docRef = doc(db, "carts", currentUserId);
-      
+      console.log(`email: ${currentUserEmail}`);
       try {
-        const docSnap = await getDoc(docRef);
-        if (docSnap.exists()) return;
-
-        await setDoc(docRef, {
-          owner: currentUser.email,
+        const cartRef = doc(db, "carts", currentUserId);
+        await setDoc(cartRef, {
+          owner: currentUserEmail,
           dateCreated: serverTimestamp(),
           dateLastModified: serverTimestamp(),
-          subtotal: 0,
-          totalQuantity: 0
+          totalQuantity: 0,
+          subtotal: 0
         });
-
-        setLoading(false);
-        console.log(loading);
       } catch(error) {
         console.log(error);
       }
     };
 
-    console.log("cart initialization check useEffect ran");
     return unsubscribe;
-  }, []);
+  }, [currentUserId]);
 
   // TODO: Add to user's cart inside database.
   async function addProductToCart(itemId) {
@@ -165,10 +155,6 @@ export function CartProvider({ children }) {
       console.log(error);
     }
   }
-
-  // TODO: Get subtotal and total items
-  
-  // console.log(eCart);
 
   const value = {
     eCart,
