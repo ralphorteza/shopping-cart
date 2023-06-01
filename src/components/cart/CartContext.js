@@ -59,37 +59,14 @@ export function CartProvider({ children }) {
       setECart(prev => eCartItems);
       setLoading(prev => !prev);
       setQuantity(_quantity);
-      // console.log(_quantity);
       setSubtotal(_subtotal);
-      console.log(`1st inner eCart useEffect ran. subtotal: ${subtotal}  quantity: ${quantity}`);
-
     });
     
-    console.log(`1st eCart useEffect ran. subtotal: ${subtotal}  quantity: ${quantity}`);
-    // return unsubscribe; 
+
     return () => {
-      console.log("unsubscribed");
       unsubscribe();
     }
-  }, [currentUserId]);
-
-  // useEffect(() => {
-  //   const unsubscribe = async () => {
-  //     // const owner = currentUser ? currentUser.uid : "unknown";
-  //     const cartRef = doc(db, "carts", currentUserId);
-  //     await updateDoc(
-  //       cartRef,
-  //       {
-  //         dateLastModified: serverTimestamp(),
-  //         subtotal: subtotal,
-  //         totalQuantity: quantity,
-  //       }
-  //     );
-  //   }
-  //   console.log("2nd useEffect ran");
-  //   return unsubscribe;
-
-  // }, [subtotal, quantity]);
+  }, []);
 
 
   async function initializeCart() {    
@@ -97,7 +74,7 @@ export function CartProvider({ children }) {
       const cartRef = doc(db, "carts", currentUserId);
       const cartSnap = await getDoc(cartRef);
       console.log("initializeCart ran");
-      // if (cartSnap.exists()) return;
+
       if (cartSnap.exists()) {
         console.log("cart already exists!");
         return;
@@ -148,21 +125,9 @@ export function CartProvider({ children }) {
         console.log("product already exist in cart!");
         return;
       }
-      console.log("addProductToCart function ran");
 
-      setQuantity(prev => prev + 1);
-      setSubtotal(prev => prev + newProduct.cost);
-      await updateDoc(
-        cartRef,
-        {
-          dateLastModified: serverTimestamp(),
-          subtotal: subtotal,
-          totalQuantity: quantity
-        }
-      );
       console.log("cart fields updated");
       await setDoc(productRef, newProduct, {merge: true});
-      console.log("new product added");
     } catch(error) {
       console.log(error);
     }
@@ -183,7 +148,7 @@ export function CartProvider({ children }) {
           totalQuantity: quantity
         }
       );
-      await updateDoc(productRef, {amount: docSnap.data().amount + 1});
+      await updateDoc(productRef, {amount: updatedQuantity});
     } catch(error) {
       console.log(error);
     }
@@ -199,14 +164,6 @@ export function CartProvider({ children }) {
       if (updatedQuantity < 1) return;
 
       await updateDoc(productRef, {amount: updatedQuantity});
-      await updateDoc(
-        cartRef,
-        {
-          dateLastModified: serverTimestamp(),
-          subtotal: subtotal,
-          totalQuantity: quantity
-        }
-      );
     } catch(error) {
       console.log(error);
     }
@@ -225,14 +182,6 @@ export function CartProvider({ children }) {
       const productSubtotal = productQuantity * productCost;
 
       await deleteDoc(productRef);
-      await updateDoc(
-        cartRef,
-        {
-          dateLastModified: serverTimestamp(),
-          subtotal: subtotal,
-          totalQuantity: quantity
-        }
-      );
     } catch(error) {
       console.log(error);
     } 
