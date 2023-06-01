@@ -28,25 +28,24 @@ export function CartProvider({ children }) {
   const { shopItems } = useShop();
   const [eCart, setECart] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [quantity, setQuantity] = useState(-1);
-  const [subtotal, setSubtotal] = useState(0);
+  const [cartReview, setCartReview] = useState({
+    quantity: 0,
+    subtotal: 0
+  })
   const currentUserId = currentUser ? currentUser.uid : "unknown";
   const currentUserEmail = currentUser ? currentUser.email : "unknown";
 
-
-  // Runs only once after current user changes.
   useEffect(() => {
     const userCartRef = collectionGroup(db, "cart-items");
-    const q = query( userCartRef, where("userId", "==", currentUserId));
+    const q = query(userCartRef, where("userId", "==", currentUserId));
     
     setLoading(true);
     
     const unsubscribe = onSnapshot(q, (querySnapshot) => {
-      console.log("1st inner eCart useEffect ran");
       const eCartItems = [];
       let _quantity = 0;
       let _subtotal = 0;
-
+      
       querySnapshot.forEach((doc) => {
         eCartItems.push(doc.data());
         const currItemQuantity = doc.data().amount;
@@ -55,14 +54,18 @@ export function CartProvider({ children }) {
         _quantity += currItemQuantity;
         _subtotal += currItemSubtotal;
       });
-
+      
       setECart(prev => eCartItems);
       setLoading(prev => !prev);
-      setQuantity(_quantity);
-      setSubtotal(_subtotal);
+      setCartReview(prev => ({
+        ...prev,
+        quantity: _quantity,
+        subtotal: _subtotal
+      }))
+      console.log(`1st inner eCart useEffect ran; quantity: ${cartReview.quantity}   subtotal: ${cartReview.subtotal}`);
     });
     
-
+    
     return () => {
       unsubscribe();
     }
@@ -116,17 +119,14 @@ export function CartProvider({ children }) {
     };
 
     try {
-      const cartRef = doc(db, "carts", owner);
       const productRef = doc(db, "carts", owner, "cart-items", matchedItem.itemId);
       const productSnap = await getDoc(productRef);   
 
-      // if (productSnap.exists()) return;
       if (productSnap.exists()) {
         console.log("product already exist in cart!");
         return;
       }
 
-      console.log("cart fields updated");
       await setDoc(productRef, newProduct, {merge: true});
     } catch(error) {
       console.log(error);
@@ -135,19 +135,10 @@ export function CartProvider({ children }) {
 
   async function addItemQuantity(itemId) {  
     try {
-      const cartRef = doc(db, "carts", currentUserId);
       const productRef = doc(db, "carts", currentUserId, "cart-items", itemId);
       const docSnap = await getDoc(productRef);
       const updatedQuantity = Number(docSnap.data().amount) + 1;
       
-      await updateDoc(
-        cartRef,
-        {
-          dateLastModified: serverTimestamp(),
-          subtotal: subtotal,
-          totalQuantity: quantity
-        }
-      );
       await updateDoc(productRef, {amount: updatedQuantity});
     } catch(error) {
       console.log(error);
@@ -156,7 +147,6 @@ export function CartProvider({ children }) {
 
   async function subtractItemQuantity(itemId) {
     try {
-      const cartRef = doc(db, "carts", currentUserId);
       const productRef = doc(db, "carts", currentUserId, "cart-items", itemId);
       const docSnap = await getDoc(productRef);
       const updatedQuantity = Number(docSnap.data().amount) - 1;
@@ -174,7 +164,6 @@ export function CartProvider({ children }) {
     const matchedItem = shopItems.find(item => item.itemId === itemId);
 
     try {
-      const cartRef = doc(db, "carts", currentUserId);
       const productRef = doc(db, "carts", owner, "cart-items", matchedItem.itemId);
       const productSnap = await getDoc(productRef);
       const productQuantity = productSnap.data().amount;
@@ -189,8 +178,7 @@ export function CartProvider({ children }) {
 
   const value = {
     eCart,
-    quantity,
-    subtotal,
+    cartReview,
     addItemQuantity,
     addProductToCart,
     deleteProductFromCart,

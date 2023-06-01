@@ -7,15 +7,15 @@ import { useCart } from "../cart/CartContext";
 
 export default function Nav() {
   const { currentUser, logout } = useAuth();
-  const { quantity } = useCart();
+  const { cartReview } = useCart();
   const [error, setError] = useState("");
   const navigate = useNavigate();
   const location = useLocation();
 
   let amountItem;
-  if (quantity >= 1 && quantity < 100) {
-    amountItem = (<span className="dot">{quantity}</span>);
-  } else if ( quantity >= 100) {
+  if (cartReview.quantity >= 1 && cartReview.quantity < 100) {
+    amountItem = (<span className="dot">{cartReview.quantity}</span>);
+  } else if ( cartReview.quantity >= 100) {
     amountItem = (<span className="dot">99+</span>)
   } else{
     amountItem = ("");

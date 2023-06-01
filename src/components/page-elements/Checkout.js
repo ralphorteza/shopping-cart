@@ -6,7 +6,7 @@ import { useAuth } from "../auth/AuthContext";
 import { useCart } from "../cart/CartContext";
 
 export default function Checkout() {
-  const { eCart } = useCart();
+  const { eCart, cartReview } = useCart();
 
   const checkoutCardsArray = eCart.map(item => (
     <CheckoutCard
@@ -27,14 +27,14 @@ export default function Checkout() {
     <div className="checkout">
       <section className="checkout--info grid">
         {/* <h2 className="checkout--subtotal">subtotal: <span>₴{formattedSubtotal}</span></h2> */}
-        <h2 className="checkout--subtotal">subtotal: <span>₴0</span></h2>
+        <h2 className="checkout--subtotal">subtotal: <span>₴{cartReview.subtotal}</span></h2>
         <Link className="link--shop button" to="/shop">Continue Shopping</Link>
         <button 
           className="button"
           onClick={!currentUser ? handleNoSignIn : null}
         >
-          {/* Checkout<span> ({totalQuantity} items)</span> */}
-          Checkout<span> (n items)</span>
+          Checkout<span> ({cartReview.quantity} items)</span>
+          {/* Checkout<span> (n items)</span> */}
         </button>
       </section>
       <section className="checkout--cards grid">
