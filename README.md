@@ -20,4 +20,5 @@ npm start
 
 ## TODOS:
   - ~~Revise shopping-cart prop drilling into a context~~
-  - Link user account shopping carts to their account
+  - ~~Link user account shopping carts to their account~~
+  - Add anon shopping into user account when logged in

@@ -2,15 +2,14 @@ import React, { useContext, useEffect, useState } from "react";
 import { useShop } from "../../contexts/ShopContext";
 import { useAuth } from "../auth/AuthContext";
 import { 
-  updateDoc,
-  getDoc,
-  getDocs,
-  doc,
-  serverTimestamp,
-  setDoc,
   collectionGroup,
+  doc,
+  getDoc,
   onSnapshot,
   query,
+  serverTimestamp,
+  setDoc,
+  updateDoc,
   where
 } from "@firebase/firestore";
 import { db } from "../../firebase";
@@ -26,8 +25,8 @@ export function CartProvider({ children }) {
 
   const { currentUser } = useAuth();
   const { shopItems } = useShop();
-  const [eCart, setECart] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [eCart, setECart] = useState([]);
   const [cartReview, setCartReview] = useState({
     quantity: 0,
     subtotal: 0
