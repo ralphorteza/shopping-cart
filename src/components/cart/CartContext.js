@@ -31,10 +31,12 @@ export function CartProvider({ children }) {
   const [cartReview, setCartReview] = useState({
     quantity: 0,
     subtotal: 0
-  })
+  });
+
   const currentUserId = currentUser ? currentUser.uid : "unknown";
   const currentUserEmail = currentUser ? currentUser.email : "unknown";
 
+  // Checks for changes in database, then updates states.
   useEffect(() => {
     const userCartRef = collectionGroup(db, "cart-items");
     const q = query(userCartRef, where("userId", "==", currentUserId));
@@ -56,36 +58,46 @@ export function CartProvider({ children }) {
       });
       
       setECart(prev => eCartItems);
-      setLoading(prev => !prev);
       setCartReview(prev => ({
         ...prev,
         quantity: _quantity,
         subtotal: _subtotal
       }))
-      console.log(`1st inner eCart useEffect ran; quantity: ${cartReview.quantity}   subtotal: ${cartReview.subtotal}`);
+      setLoading(false);
     });
-    
     
     return () => {
       unsubscribe();
     }
   }, []);
 
+  // Checks for changes inside cartReview, then updates changes in database.
+  useEffect(() => {
+    async function updateCartReviewToServer() {
+      const cartRef = doc(db, "carts", currentUserId);
+      try {
+        await updateDoc(
+          cartRef,
+          {
+            dateLastModified: serverTimestamp(),
+            subtotal: cartReview.subtotal,
+            totalQuantity: cartReview.quantity
+          }
+        )
+      } catch(error) {
+        console.log(error);
+      }
+    }
+    
+    updateCartReviewToServer();
+  }, [cartReview]);
 
   async function initializeCart() {    
     try {
       const cartRef = doc(db, "carts", currentUserId);
       const cartSnap = await getDoc(cartRef);
-      console.log("initializeCart ran");
 
-      if (cartSnap.exists()) {
-        console.log("cart already exists!");
-        return;
-      }
-
-      const dummyDocRef = doc(db, "carts", currentUserId, "cart-items", "dummyItem");
-      await setDoc(dummyDocRef, {"dummyField": "n/a"});
-
+      if (cartSnap.exists()) return;
 
       await setDoc(
         cartRef, 
@@ -128,6 +140,7 @@ export function CartProvider({ children }) {
       }
 
       await setDoc(productRef, newProduct, {merge: true});
+
     } catch(error) {
       console.log(error);
     }
@@ -140,6 +153,7 @@ export function CartProvider({ children }) {
       const updatedQuantity = Number(docSnap.data().amount) + 1;
       
       await updateDoc(productRef, {amount: updatedQuantity});
+
     } catch(error) {
       console.log(error);
     }
@@ -154,6 +168,7 @@ export function CartProvider({ children }) {
       if (updatedQuantity < 1) return;
 
       await updateDoc(productRef, {amount: updatedQuantity});
+
     } catch(error) {
       console.log(error);
     }
@@ -165,12 +180,8 @@ export function CartProvider({ children }) {
 
     try {
       const productRef = doc(db, "carts", owner, "cart-items", matchedItem.itemId);
-      const productSnap = await getDoc(productRef);
-      const productQuantity = productSnap.data().amount;
-      const productCost = productSnap.data().cost;
-      const productSubtotal = productQuantity * productCost;
-
       await deleteDoc(productRef);
+
     } catch(error) {
       console.log(error);
     } 
