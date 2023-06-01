@@ -9,12 +9,11 @@ export default function Card({ itemObj }) {
   const { addProductToCart, initializeCart } = useCart();
 
   // TODO: clicking add multiple times to add quantity
-  function handleAddButton(e, itemId) {
+  async function handleAddButton(e, itemId) {
     e.stopPropagation();
-    // console.log(currentUser);
-    // if (currentUser !== null) initializeCart();
-    initializeCart();
-    addProductToCart(itemId);
+    
+    await initializeCart();
+    await addProductToCart(itemId);
   }
 
   return (
