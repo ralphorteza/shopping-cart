@@ -4,6 +4,7 @@ import { useAuth } from "../auth/AuthContext";
 import { 
   collectionGroup,
   doc,
+  deleteDoc,
   getDoc,
   onSnapshot,
   query,
@@ -13,7 +14,6 @@ import {
   where
 } from "@firebase/firestore";
 import { db } from "../../firebase";
-import { deleteDoc } from "firebase/firestore";
 
 const CartContext = React.createContext();
 
@@ -27,6 +27,7 @@ export function CartProvider({ children }) {
   const { shopItems } = useShop();
   const [loading, setLoading] = useState(false);
   const [eCart, setECart] = useState([]);
+
   const [cartReview, setCartReview] = useState({
     quantity: 0,
     subtotal: 0
@@ -55,20 +56,23 @@ export function CartProvider({ children }) {
         _quantity += currItemQuantity;
         _subtotal += currItemSubtotal;
       });
-      
+
       setECart(prev => eCartItems);
       setCartReview(prev => ({
         ...prev,
         quantity: _quantity,
         subtotal: _subtotal
-      }))
+      }));
+
       setLoading(false);
+      // console.log(eCart);
+      // console.log("recieved snapshot");
     });
     
     return () => {
       unsubscribe();
     }
-  }, []);
+  }, [currentUserId]);
 
   // Checks for changes inside cartReview, then updates changes in database.
   useEffect(() => {
@@ -82,14 +86,14 @@ export function CartProvider({ children }) {
             subtotal: cartReview.subtotal,
             totalQuantity: cartReview.quantity
           }
-        )
+        );
       } catch(error) {
         console.log(error);
       }
     }
     
     updateCartReviewToServer();
-  }, [cartReview]);
+  }, [cartReview, currentUserId]);
 
   async function initializeCart() {    
     try {
@@ -134,7 +138,7 @@ export function CartProvider({ children }) {
       const productSnap = await getDoc(productRef);   
 
       if (productSnap.exists()) {
-        console.log("product already exist in cart!");
+        // console.log("product already exist in cart!");
         return;
       }
 
