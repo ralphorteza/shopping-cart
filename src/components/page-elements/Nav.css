@@ -36,6 +36,11 @@
   text-align: center;
   font-size: 0.8em;
   color: var(--secondary);
+
+  overflow: hidden;
+  white-space: nowrap;
+
+  text-overflow: ellipsis;
 }
 
 .cart--link {
@@ -112,16 +117,29 @@
 
 /* large tablet & laptop styles */
 @media screen and (min-width: 960px) {
+  .logout {
+    font-size: 0.9em;
+  }
+
   .cart {
-    width: 90%;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .dot {
-    transform: translate(90%, -225%);
+    transform: translate(-50%, -60%);
   }
 }
 
 /* desktop styles */
 @media screen and (min-width: 1200px) {
+  .cart {
+    width: 80%;
+    transform: translate(0%, 25%);
+  }
 
+  .dot {
+    transform: translate(80%, -175%);
+  }
 }

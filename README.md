@@ -25,3 +25,4 @@ npm start
   - style
   ### delayed
   - Add anon shopping into user account when logged in 
+  - fix "no document" bug after signing up.
