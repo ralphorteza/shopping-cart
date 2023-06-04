@@ -1,6 +1,6 @@
 .navbar > .logo > h1 {
   color: var(--secondary);
-  font-weight: bold;
+  font-weight: bolder;
   text-align: center;
 }
 
@@ -12,11 +12,6 @@
   display: none;
 }
 
-.cart--link {
-  align-self: center;
-  justify-self: center;
-  grid-column: 8/9;
-}
 
 .dot {
   height: 1.2em;
@@ -33,6 +28,40 @@
 
 .navbar {
   background-color: var(--primary);
+}
+
+.account--link {
+  grid-column: 3 / 5;
+  align-self: center;
+  text-align: center;
+  font-size: 0.8em;
+  color: var(--secondary);
+}
+
+.cart--link {
+  align-self: center;
+  justify-self: center;
+  grid-column: 8/9;
+}
+
+.logout {
+  grid-column: 5 / 8;
+  background-color: var(--secondary);
+  padding: 4px 30px;
+  margin: 10px;
+  justify-self: center;
+
+  cursor: pointer;
+}
+
+.login {
+  grid-column: 5 / 8;
+  background-color: var(--secondary);
+  padding: 4px 30px;
+  margin: 10px;
+  justify-self: center;
+
+  cursor: pointer;
 }
 
 /* small tablet styles */
