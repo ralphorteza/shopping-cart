@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react'
 import { useAuth } from './AuthContext';
 import { Link, useNavigate} from "react-router-dom";
+import "./authentication.css"
 
 export default function Login() {
   const emailRef = useRef();
@@ -25,8 +26,8 @@ export default function Login() {
   }
 
   return (
-    <>
-      <div className="log-in-container">
+    <div className="authentication">
+      <div className="login--card">
         <form onSubmit={handleSubmit}>
           <h1>Log In</h1>
           {error && <h3>{error}</h3>}
@@ -40,14 +41,22 @@ export default function Login() {
             placeholder="enter password"
             ref={passwordRef}
           />
-          <button disabled={loading}>Login</button>
+          <button
+            className="login--button button" 
+            disabled={loading}
+            >
+              Login
+            </button>
         </form>
-        <Link to="/forgot-password">Forgot password?</Link>
+        <section className="section--forgotpassword">
+          <p>Forgot password?</p><Link to="/forgot-password">Reset</Link>
+        </section>
+        <section className="section--signup">
+        <p>Need an Account?</p><Link to="/signup">Sign up</Link>
+      </section>
       </div>
       <br/>
-      <section>
-        Need an Account? <Link to="/signup">Sign up</Link>
-      </section>
-    </>
+
+    </div>
   );
 }

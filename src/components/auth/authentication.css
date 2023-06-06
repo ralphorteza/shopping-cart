@@ -19,11 +19,6 @@
   flex-direction: column;
 }
 
-h1 {
-  color: var(--primary);
-  font-weight: bolder;
-  text-align: center;
-}
 
 .signup.button {
   width: clamp(100px, 120px, 150px);
@@ -33,6 +28,44 @@ h1 {
 .section--login {
   display:flex;
   align-self: center;
+}
+
+.login--card {
+  display: flex;
+  flex-direction: column;
+  margin: 20px 8px 0px 8px;
+  padding: 10px 8px;
+  width: clamp(330px, 340px, 350px);
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px 2px rgba(0,0,0,.2);
+}
+
+.login--card > form {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.login--button.button {
+  width: clamp(100px, 120px, 150px);
+  margin: 0px 8px 12px 8px;
+}
+
+.section--forgotpassword {
+  display: flex;
+  align-self: center;
+  margin-bottom: 4px;
+}
+
+.section--signup {
+  display:flex;
+  align-self: center;
+}
+
+h1 {
+  color: var(--primary);
+  font-weight: bolder;
+  text-align: center;
 }
 
 section a {
