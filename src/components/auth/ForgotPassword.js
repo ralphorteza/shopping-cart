@@ -27,8 +27,8 @@ const ForgotPassword = () => {
   }
 
   return (
-    <>
-      <div className="log-in-container">
+    <div className="authentication">
+      <div className="resetpassword--card">
         <form onSubmit={handleSubmit}>
           <h1>Password Reset</h1>
           {error && <h3>{error}</h3>}
@@ -38,15 +38,18 @@ const ForgotPassword = () => {
             placeholder="email"
             ref={emailRef}
           />
-          <button disabled={loading}>Reset Password</button>
+          <button
+            className="resetpassword button"
+            disabled={loading}
+            >
+              Reset Password
+            </button>
         </form>
-        <Link to="/login">Login</Link>
+        <section className="section--signup">
+          <p>Need an Account?</p><Link to="/signup">Sign up</Link>
+        </section>
       </div>
-      <br/>
-      <section>
-        Need an Account? <Link to="/signup">Sign up</Link>
-      </section>
-    </>
+    </div>
   );
 };
 

@@ -1,6 +1,7 @@
 import React, { useState, useRef } from "react";
 import { useAuth } from "./AuthContext";
 import { Link, useNavigate } from "react-router-dom";
+import "./authentication.css"
 
 const UpdateProfile = () => {
   const emailRef = useRef();
@@ -41,8 +42,8 @@ const UpdateProfile = () => {
   }
 
   return (
-    <>
-      <div className="sign-in-container">
+    <div className="authentication">
+      <div className="updateprofile--card">
         <form onSubmit={handleSubmit}>
           <h1>Update Profile</h1>
           {error && <h3>{error}</h3>}
@@ -64,13 +65,18 @@ const UpdateProfile = () => {
             ref={passwordConfirmationRef}
 
           />
-          <button disabled={loading}>Update</button>
+          <button
+            className="updateprofile button" 
+            disabled={loading}
+            >
+              Update
+            </button>
         </form>
+        <section className="section--cancel">
+          <Link to="/">cancel</Link>
+        </section>
       </div>
-      <section>
-        <Link to="/">cancel</Link>
-      </section>
-    </>
+    </div>
   );
 };
 
