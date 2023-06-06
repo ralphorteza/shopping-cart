@@ -79,7 +79,6 @@ export default function Nav() {
       {currentUser && logoutButton}
       <Link className="cart--link" to="/checkout">
         <img className="cart" src={Cart} alt="checkout cart"></img>{amountItem}
-        {/* <img className="cart" src={Cart} alt="checkout cart"></img> */}
       </Link>
       
     </nav>

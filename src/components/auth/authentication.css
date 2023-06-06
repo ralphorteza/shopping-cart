@@ -1,0 +1,48 @@
+.authentication {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.signup--card {
+  display: flex;
+  flex-direction: column;
+  margin: 20px 8px 0px 8px;
+  padding: 10px 8px;
+  width: clamp(330px, 340px, 350px);
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px 2px rgba(0,0,0,.2);
+}
+
+.signup--card > form {
+  display: flex;
+  flex-direction: column;
+}
+
+h1 {
+  color: var(--primary);
+  font-weight: bolder;
+  text-align: center;
+}
+
+.signup.button {
+  width: clamp(100px, 120px, 150px);
+  margin: 0px 8px 12px 8px;
+}
+
+.section--login {
+  display:flex;
+  align-self: center;
+}
+
+section a {
+  color: var(--primary);
+  margin-left: 4px;
+}
+
+
+@media screen and (min-width: 1200px){
+  a {
+    font-size: 0.8em;
+  } 
+}

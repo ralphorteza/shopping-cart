@@ -1,6 +1,7 @@
 import React, { useState, useRef } from "react";
 import { useAuth } from "./AuthContext";
 import { Link, useNavigate } from "react-router-dom";
+import "./authentication.css"
 
 export default function Signup() {
   const emailRef = useRef();
@@ -31,8 +32,8 @@ export default function Signup() {
   }
   
   return (
-        <>
-      <div className="sign-in-container">
+    <div className="authentication">
+      <div className="signup--card">
         <form onSubmit={handleSubmit}>
           <h1>Sign Up</h1>
           {error && <h3>{error}</h3>}
@@ -51,13 +52,18 @@ export default function Signup() {
             placeholder="confirm password"
             ref={passwordConfirmationRef}
           />
-          <button disabled={loading}>sign up</button>
+          <button
+            className="signup button"
+            disabled={loading}
+            >
+              sign up
+            </button>
         </form>
+        <section className="section--login">
+          <p>Already have an account? </p><Link to="/login">Log in</Link>
+        </section>
       </div>
-      <section>
-        Already have an account? <Link to="/login">Log in</Link>
-      </section>
-    </>
+    </div>
   );
 }
 
